@@ -1,4 +1,4 @@
-package com.sdn.teampredators.polima.ui.activity.timber
+package com.sdn.teampredators.polima.data.timber
 
 import android.app.Application
 import com.sdn.teampredators.polima.BuildConfig
