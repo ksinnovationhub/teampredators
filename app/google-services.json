@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "885692731536",
+    "project_id": "polima-3c170",
+    "storage_bucket": "polima-3c170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885692731536:android:440a0b5dbb667370828815",
+        "android_client_info": {
+          "package_name": "com.sdn.teampredators.polima"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885692731536-0v6q2hus2tgvisb2uq1mv1cvukgueabo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sdn.teampredators.polima",
+            "certificate_hash": "71ba6aa8a2ad57a76f8d884ba10278fdf34789f1"
+          }
+        },
+        {
+          "client_id": "885692731536-4k3e9g6vcmig38ed2kiarof6g0k67pd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUhjGUG4VN9fhERDI1NNHc-G9Xw9jyg_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885692731536-4k3e9g6vcmig38ed2kiarof6g0k67pd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

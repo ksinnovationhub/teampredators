@@ -1,7 +1,7 @@
 package com.sdn.teampredators.polima.ui.utils
 
 import io.ktor.client.features.*
-//
+
 //fun Exception.toCustomExceptions() = when (this) {
 //    is ServerResponseException -> Failure.HttpErrorInternalServerError(this)
 //    is ClientRequestException ->
