@@ -1,4 +1,4 @@
-package com.sdn.teampredators.polima.data.timber
+package com.sdn.teampredators.polima.utils
 
 import android.util.Log
 import timber.log.Timber

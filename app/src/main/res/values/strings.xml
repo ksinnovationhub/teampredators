@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Polima</string>
+    <string name="onboarding_header_1">Citizens</string>
+    <string name="onboarding_header_2">Statement</string>
+    <string name="onboarding_header_3">Vision</string>
+    <string name="onboarding_description_1">Play your part in getting promises fulfiiled</string>
+    <string name="onboarding_description_2">Together they can be  accountable</string>
+    <string name="onboarding_description_3">Get notified when  promises are verified</string>
+    <string name="skip">Skip</string>
+    <string name="get_started">Get Started</string>
 </resources>

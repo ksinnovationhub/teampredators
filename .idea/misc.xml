@@ -7,6 +7,26 @@
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/polima_logo.xml" value="0.1015625" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/splash_background.xml" value="0.22604166666666667" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/drawable/background_image_1.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/background_tab_indicator_not_selected.xml" value="0.1115" />
+        <entry key="app/src/main/res/drawable/background_tab_indicator_selected.xml" value="0.1115" />
+        <entry key="app/src/main/res/drawable/bg_main.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/bg_pager_indicator.xml" value="0.1115" />
+        <entry key="app/src/main/res/drawable/bg_pager_indicator_selected.xml" value="0.1115" />
+        <entry key="app/src/main/res/drawable/bg_pager_indicator_unselected.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_app_logo.xml" value="0.1785" />
+        <entry key="app/src/main/res/drawable/ic_app_name.xml" value="0.165" />
+        <entry key="app/src/main/res/drawable/ic_arrow_right.xml" value="0.1785" />
+        <entry key="app/src/main/res/drawable/il_onboarding_1.xml" value="0.1585" />
+        <entry key="app/src/main/res/drawable/il_onboarding_2.xml" value="0.1785" />
+        <entry key="app/src/main/res/drawable/il_onboarding_3.xml" value="0.1785" />
+        <entry key="app/src/main/res/drawable/polima_logo.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/polima_single_logo.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/selector_tab_pager.xml" value="0.1115" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_onboarding.xml" value="0.30648148148148147" />
       </map>
     </option>
   </component>

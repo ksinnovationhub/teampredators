@@ -1,4 +1,4 @@
-package com.sdn.teampredators.polima.ui.utils
+package com.sdn.teampredators.polima.utils
 
 import android.view.View
 import android.widget.ImageView
@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.sdn.teampredators.polima.R
 
-infix fun <T : Any> ImageView.glide(file: T) {
+infix fun <T : Any> ImageView.load(file: T) {
     Glide.with(this)
         .applyDefaultRequestOptions(requestManger())
         .load(file)
