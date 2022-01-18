@@ -1,7 +1,7 @@
-package com.sdn.teampredators.polima.data.timber
+package com.sdn.teampredators.polima
 
 import android.app.Application
-import com.sdn.teampredators.polima.BuildConfig
+import com.sdn.teampredators.polima.utils.ReleaseTree
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
