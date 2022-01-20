@@ -5,6 +5,7 @@ import android.widget.ImageView
 import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.snackbar.Snackbar
 import com.sdn.teampredators.polima.R
 
 infix fun <T : Any> ImageView.load(file: T) {
@@ -21,6 +22,10 @@ private fun requestManger() =
         .centerCrop()
 
 
-infix fun View.viewState(state: Boolean) {
+fun View.viewState(state: Boolean) {
     this.isVisible = state
+}
+
+fun View.message(msg: String){
+    Snackbar.make(this, msg, Snackbar.LENGTH_LONG).show()
 }
