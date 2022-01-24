@@ -13,4 +13,5 @@
     <color name="tab_unselected">#C4C4C4</color>
     <color name="tab_selected">@color/polima_green</color><!-- Tab -->
     <color name="tabNotSelectedColor">#E9EAEA</color>
+    <color name="progress_layout_background">#C1000000</color>
 </resources>

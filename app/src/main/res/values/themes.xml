@@ -54,4 +54,48 @@
         <item name="android:textAllCaps">false</item>
         <item name="lineHeight">38dp</item>
     </style>
+    
+    <style name="TextAppearance.AppCompat.Body1.OtherText">
+        <item name="fontFamily">@font/muli</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:text">@string/no_account</item>
+    </style>
+
+    <style name="HeaderText" parent="TextAppearance.AppCompat.Display1.TitleText">
+        <item name="android:textSize">36sp</item>
+        <item name="android:text">@string/welcome</item>
+    </style>
+
+    <style name="SubHeader" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:text">@string/long_text</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="font">@font/muli</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="textLayoutBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:textColor">@color/black</item>
+        <item name="helperTextTextColor">@color/black</item>
+    </style>
+
+    <style name="textInputBox">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/muli</item>
+        <item name="android:background">@drawable/bg_et</item>
+    </style>
+
+    <style name="Widget.MaterialComponents.Button.OutlinedButton.customOutlinedButton">
+        <item name="android:text">@string/sign_up</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.Material3.CircularProgressIndicator.PolimaProgressBar">
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:mirrorForRtl">true</item>
+        <item name="indicatorSize">@dimen/progress_indicator_size</item>
+        <item name="trackThickness">@dimen/progress_track_thickness</item>
+    </style>
+
 </resources>

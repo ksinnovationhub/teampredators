@@ -38,7 +38,7 @@ class OnBoardingViewModel : ViewModel() {
     }
 
     fun toLogin() {
-        _action.value = OnBoardingAction.Navigate(OnBoardingFragmentDirections.toSignUpFragment())
+        _action.value = OnBoardingAction.Navigate(OnBoardingFragmentDirections.toSignInFragment())
     }
 }
 
