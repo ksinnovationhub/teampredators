@@ -17,4 +17,5 @@
     <dimen name="header_text_start_margin">8dp</dimen>
     <dimen name="logo_width">69dp</dimen>
     <dimen name="logo_height">35dp</dimen>
+    <dimen name="card_medium_radius">10dp</dimen>
 </resources>

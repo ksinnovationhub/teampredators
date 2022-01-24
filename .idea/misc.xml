@@ -7,15 +7,20 @@
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/bg_et.xml" value="0.2109375" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/bg_main.xml" value="0.2109375" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/bg_sub.xml" value="0.2109375" />
+        <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/home_selector.xml" value="0.2109375" />
+        <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/notification_selector.xml" value="0.2109375" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/polima_logo.xml" value="0.1015625" />
+        <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/profile_selector.xml" value="0.2109375" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/drawable/splash_background.xml" value="0.22604166666666667" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/aspirant_item_layout.xml" value="0.22" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/drop_down_menu_item.xml" value="0.25" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/fragment_onboarding.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/fragment_sign_in.xml" value="0.22" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/item_onboarding.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/layout/layout_progress_bar.xml" value="0.22" />
+        <entry key="..\:/Users/Jesil OT/Documents/AndroidStudioProject/Polima/app/src/main/res/menu/bottom_nav_item.xml" value="0.19479166666666667" />
       </map>
     </option>
   </component>

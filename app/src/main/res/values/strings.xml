@@ -21,6 +21,9 @@
     <string name="full_name">Full Name</string>
     <string name="nin_number">NIN Number</string>
     <string name="gender">Gender</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
