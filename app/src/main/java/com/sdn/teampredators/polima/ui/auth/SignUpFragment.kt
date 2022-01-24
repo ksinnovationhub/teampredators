@@ -12,7 +12,6 @@ import com.sdn.teampredators.polima.databinding.FragmentSignUpBinding
 import com.sdn.teampredators.polima.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
-import timber.log.Timber
 
 @AndroidEntryPoint
 class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
@@ -30,11 +29,9 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
     private fun setUpClickListeners() = with(binding) {
         signUpButton.setOnClickListener {
-            val email = etSignUpEmail.text.toString()
-            val password = etSignUpPassword.text.toString().trim()
-            lifecycleScope.launchWhenCreated {
-                viewModel.doSignUp(email, password)
-            }
+            val email = etSignUpEmail.text.toString().trim()
+            val password = etSignUpPassword.text.toString()
+            viewModel.doSignUp(email, password)
         }
     }
 
@@ -74,20 +71,17 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     }
 
     private fun loading() = with(binding) {
-        Timber.d("Loading...")
         progressBar.root.viewState(true)
     }
 
     private fun error(message: String?) = with(binding) {
-        Timber.d("signInWithEmail:failure %s", message)
         root.showMessage(message ?: " ")
         progressBar.root.viewState(false)
     }
 
     private fun success() = with(binding) {
-        Timber.d("signInWithEmail:success")
         progressBar.root.viewState(false)
+        root.showMessage("A verification mail has been sent to your email address")
+        // TODO: Properly handle verification state
     }
-
-
 }

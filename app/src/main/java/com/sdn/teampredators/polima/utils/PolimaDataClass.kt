@@ -9,19 +9,19 @@ sealed class DataResult<out T> {
     object Loading : DataResult<Nothing>()
 }
 
-sealed class ListResult<out E>{
+sealed class ListResult<out E> {
     data class Success<E>(val list: List<E>?) : ListResult<E>()
-    data class Error(val error: Throwable?): ListResult<Nothing>()
+    data class Error(val error: Throwable?) : ListResult<Nothing>()
     object Loading : ListResult<Nothing>()
 
 }
 
-sealed class AuthenticationState{
-    object Success: AuthenticationState()
-    data class Error(val error: String?): AuthenticationState()
-    object Loading: AuthenticationState()
+sealed class AuthenticationState {
+    object Success : AuthenticationState()
+    data class Error(val error: String?) : AuthenticationState()
+    object Loading : AuthenticationState()
 }
 
-sealed class SignInActions {
-    data class Navigate(val destination: NavDirections) : SignInActions()
+sealed class GenericActions {
+    data class Navigate(val destination: NavDirections) : GenericActions()
 }

@@ -3,8 +3,8 @@ package com.sdn.teampredators.polima.ui.onboarding
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.navigation.NavDirections
 import com.sdn.teampredators.polima.R
+import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.SingleLiveEvent
 
 class OnBoardingViewModel : ViewModel() {
@@ -12,8 +12,8 @@ class OnBoardingViewModel : ViewModel() {
     private val _uiState = MutableLiveData<OnBoardingState>()
     val uiState: LiveData<OnBoardingState> = _uiState
 
-    private val _action = SingleLiveEvent<OnBoardingAction>()
-    val action: LiveData<OnBoardingAction> = _action
+    private val _action = SingleLiveEvent<GenericActions>()
+    val action: LiveData<GenericActions> = _action
 
     init {
         val contents = listOf(
@@ -38,14 +38,10 @@ class OnBoardingViewModel : ViewModel() {
     }
 
     fun toLogin() {
-        _action.value = OnBoardingAction.Navigate(OnBoardingFragmentDirections.toSignInFragment())
+        _action.value = GenericActions.Navigate(OnBoardingFragmentDirections.toSignInFragment())
     }
 }
 
 sealed class OnBoardingState {
     data class Content(val onboardingItems: List<OnBoardingItem>) : OnBoardingState()
-}
-
-sealed class OnBoardingAction {
-    data class Navigate(val destination: NavDirections): OnBoardingAction()
 }

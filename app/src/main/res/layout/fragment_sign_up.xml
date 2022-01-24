@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.auth.SignUpFragment">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         android:scrollbarSize="@dimen/no_space">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_sub"
-            tools:context=".ui.auth.SignUpFragment">
+            android:background="@drawable/bg_sub">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/header_text"
@@ -48,7 +51,7 @@
                 android:layout_marginTop="@dimen/default_margin"
                 app:endIconCheckable="true"
                 app:endIconMode="clear_text"
-                app:helperText="Eg: Jesil Oyeinkuro Toborowei"
+                app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="@+id/sub_header_text"
                 app:layout_constraintStart_toStartOf="@+id/sub_header_text"
                 app:layout_constraintTop_toBottomOf="@+id/sub_header_text">
@@ -72,7 +75,7 @@
                 android:enabled="false"
                 app:endIconCheckable="true"
                 app:endIconMode="clear_text"
-                app:helperText="Example@gmail.com"
+                app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="@+id/sub_header_text"
                 app:layout_constraintStart_toStartOf="@+id/sub_header_text"
                 app:layout_constraintTop_toBottomOf="@+id/ti_full_name">
@@ -94,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:enabled="false"
-                app:helperText="Eg: Ni29903Wg"
+                app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="@+id/sub_header_text"
                 app:layout_constraintStart_toStartOf="@+id/sub_header_text"
                 app:layout_constraintTop_toBottomOf="@+id/ti_sign_up_email"
@@ -119,7 +122,7 @@
                 android:enabled="false"
                 app:endIconCheckable="true"
                 app:endIconMode="clear_text"
-                app:helperText="Eg: 01234567890"
+                app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="@+id/sub_header_text"
                 app:layout_constraintStart_toStartOf="@+id/sub_header_text"
                 app:layout_constraintTop_toBottomOf="@+id/ti_sign_up_password">
@@ -141,7 +144,6 @@
                 android:layout_width="@dimen/no_space"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:background="@drawable/bg_et"
                 android:enabled="false"
                 app:layout_constraintEnd_toEndOf="@+id/sub_header_text"
                 app:layout_constraintStart_toStartOf="@+id/sub_header_text"
@@ -158,8 +160,8 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_up_button"
-                style="@style/Widget.MaterialComponents.Button.MaiButton"
-                android:layout_width="@dimen/button_width"
+                style="@style/Widget.MaterialComponents.Button.MainButton"
+                android:layout_width="@dimen/no_space"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -167,11 +169,10 @@
                 android:enabled="false"
                 android:text="@string/sign_up"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/ti_gender"
+                app:layout_constraintStart_toStartOf="@+id/ti_gender"
                 app:layout_constraintTop_toBottomOf="@+id/ti_gender"
                 app:layout_constraintVertical_bias="1.0" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
