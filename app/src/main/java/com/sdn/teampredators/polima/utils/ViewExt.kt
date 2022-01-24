@@ -26,6 +26,6 @@ fun View.viewState(state: Boolean) {
     this.isVisible = state
 }
 
-fun View.showMessage(msg: String){
+fun View.showMessage(msg: String) {
     Snackbar.make(this, msg, Snackbar.LENGTH_LONG).show()
 }

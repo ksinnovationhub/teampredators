@@ -16,7 +16,7 @@
     <string name="password">Password</string>
     <string name="sign_in">Sign in</string>
     <string name="no_account">Dont have an account?</string>
-    <string name="sign_up">sign up</string>
+    <string name="sign_up">Sign up</string>
     <string name="fp_rest">Forgotten password? Reset</string>
     <string name="full_name">Full Name</string>
     <string name="nin_number">NIN Number</string>

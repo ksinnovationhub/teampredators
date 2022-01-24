@@ -3,18 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.SignInFragment">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         android:scrollbarSize="@dimen/no_space">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_sub"
-            tools:context=".ui.auth.SignInFragment">
+            android:background="@drawable/bg_sub">
 
             <ImageView
                 android:id="@+id/app_logo"
@@ -56,7 +57,7 @@
                 android:layout_marginTop="@dimen/default_margin"
                 app:endIconCheckable="true"
                 app:endIconMode="clear_text"
-                app:helperText="Example@gmail.com"
+                app:helperTextEnabled="true"
                 app:layout_constraintEnd_toEndOf="@+id/sub_header_text"
                 app:layout_constraintStart_toStartOf="@+id/sub_header_text"
                 app:layout_constraintTop_toBottomOf="@+id/sub_header_text">
@@ -95,8 +96,8 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_in_button"
-                style="@style/Widget.MaterialComponents.Button.MaiButton"
-                android:layout_width="@dimen/button_width"
+                style="@style/Widget.MaterialComponents.Button.MainButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/medium_margin"
                 android:layout_marginTop="@dimen/button_margin"
@@ -122,11 +123,12 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_up_button"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton.customOutlinedButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.CustomOutlinedButton"
                 android:layout_width="@dimen/no_space"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/medium_margin"
                 android:layout_marginBottom="@dimen/default_margin"
+                android:text="@string/sign_up"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/sign_in_button"
                 app:layout_constraintStart_toStartOf="@+id/sign_in_button" />

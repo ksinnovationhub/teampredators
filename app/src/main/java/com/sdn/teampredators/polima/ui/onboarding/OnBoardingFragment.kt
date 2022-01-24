@@ -12,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.FragmentOnboardingBinding
 import com.sdn.teampredators.polima.utils.Constants.ONBOARDING_PREF_KEY
+import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -94,7 +95,7 @@ class OnBoardingFragment : Fragment(R.layout.fragment_onboarding) {
         }
         viewModel.action.observe(viewLifecycleOwner) {
             when (it) {
-                is OnBoardingAction.Navigate -> findNavController().navigate(it.destination)
+                is GenericActions.Navigate -> findNavController().navigate(it.destination)
             }
         }
     }
