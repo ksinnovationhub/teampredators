@@ -9,6 +9,9 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.tasks.await
+import timber.log.Timber
 
 @HiltViewModel
 class SignUpViewModel @Inject constructor(
@@ -18,19 +21,19 @@ class SignUpViewModel @Inject constructor(
     private val _signUp = MutableSharedFlow<AuthenticationState>()
     val signUp = _signUp.asSharedFlow()
 
-    suspend fun doSignUp(email: String, password: String) {
-        _signUp.emit(AuthenticationState.Loading)
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-            viewModelScope.launch {
-                if (task.isSuccessful)
-                // Create account was successfull, update UI with the signed-in user's information
-                    _signUp.emit(AuthenticationState.Success)
-                else
-                // If Create account failed, display a message to the user.
-                    _signUp.emit(AuthenticationState.Error(task.exception?.localizedMessage))
-
-            }
-        }
+    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+        Timber.e(throwable)
     }
 
+    fun doSignUp(email: String, password: String) {
+        viewModelScope.launch(exceptionHandler) {
+            _signUp.emit(AuthenticationState.Loading)
+            kotlin.runCatching {
+                val signUp = auth.createUserWithEmailAndPassword(email, password).await()
+                signUp.user?.sendEmailVerification()?.await()
+            }
+                .onSuccess { _signUp.emit(AuthenticationState.Success) }
+                .onFailure { _signUp.emit(AuthenticationState.Error(it.localizedMessage)) }
+        }
+    }
 }
