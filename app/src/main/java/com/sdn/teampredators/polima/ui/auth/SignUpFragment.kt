@@ -80,7 +80,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
     private fun error(message: String?) = with(binding) {
         Timber.d("signInWithEmail:failure %s", message)
-        root.message(message ?: " ")
+        root.showMessage(message ?: " ")
         progressBar.root.viewState(false)
     }
 
