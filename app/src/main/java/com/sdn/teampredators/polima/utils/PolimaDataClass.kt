@@ -10,10 +10,9 @@ sealed class DataResult<out T> {
 }
 
 sealed class ListResult<out E> {
-    data class Success<E>(val list: List<E>?) : ListResult<E>()
-    data class Error(val error: Throwable?) : ListResult<Nothing>()
+    data class Success<E>(val list: List<E>) : ListResult<E>()
+    data class Error(val error: String?) : ListResult<Nothing>()
     object Loading : ListResult<Nothing>()
-
 }
 
 sealed class AuthenticationState {
