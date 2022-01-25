@@ -24,6 +24,7 @@
     <string name="home">Home</string>
     <string name="notification">Notification</string>
     <string name="profile">Profile</string>
+    <string name="search_bar_hint">search for your preffered politician</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>

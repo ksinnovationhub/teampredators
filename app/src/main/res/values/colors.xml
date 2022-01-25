@@ -15,4 +15,5 @@
     <color name="tabNotSelectedColor">#E9EAEA</color>
     <color name="progress_layout_background">#C1000000</color>
     <color name="bottom_nav_color">#F5F3F3</color>
+    <color name="blur">#94000000</color>
 </resources>

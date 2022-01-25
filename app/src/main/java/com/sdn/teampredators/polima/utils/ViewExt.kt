@@ -8,7 +8,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
 import com.sdn.teampredators.polima.R
 
-infix fun <T : Any> ImageView.load(file: T) {
+infix fun ImageView.load(file: String?) {
     Glide.with(this)
         .applyDefaultRequestOptions(requestManger())
         .load(file)
@@ -18,7 +18,7 @@ infix fun <T : Any> ImageView.load(file: T) {
 private fun requestManger() =
     RequestOptions()
         .placeholder(R.drawable.ic_launcher_background)
-        .error(R.drawable.ic_launcher_background)
+        .error(R.drawable.ic_error_image)
         .centerCrop()
 
 

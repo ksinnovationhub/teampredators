@@ -34,7 +34,7 @@
             app:popExitAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/toHomeFragment"
-            app:destination="@id/homeFragment"
+            app:destination="@id/home"
             app:enterAnim="@android:anim/fade_in"
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
@@ -48,7 +48,7 @@
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:name="com.sdn.teampredators.polima.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
