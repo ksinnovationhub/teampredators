@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
@@ -10,9 +7,6 @@
     <color name="polima_green">#5CB176</color>
     <color name="polimar_green_dark">#289E47</color>
     <color name="onboarding_text_color">#5D705B</color>
-    <color name="tab_unselected">#C4C4C4</color>
-    <color name="tab_selected">@color/polima_green</color><!-- Tab -->
-    <color name="tabNotSelectedColor">#E9EAEA</color>
     <color name="progress_layout_background">#C1000000</color>
     <color name="bottom_nav_color">#F5F3F3</color>
     <color name="blur">#94000000</color>

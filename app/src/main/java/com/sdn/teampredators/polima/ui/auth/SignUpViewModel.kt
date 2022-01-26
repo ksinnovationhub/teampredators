@@ -14,9 +14,7 @@ import kotlinx.coroutines.tasks.await
 import timber.log.Timber
 
 @HiltViewModel
-class SignUpViewModel @Inject constructor(
-    private val auth: FirebaseAuth
-) : ViewModel() {
+class SignUpViewModel @Inject constructor(private val auth: FirebaseAuth) : ViewModel() {
 
     private val _signUp = MutableSharedFlow<AuthenticationState>()
     val signUp = _signUp.asSharedFlow()

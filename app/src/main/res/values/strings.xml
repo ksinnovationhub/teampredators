@@ -3,11 +3,11 @@
     <string name="onboarding_header_1">Citizens</string>
     <string name="onboarding_header_2">Statement</string>
     <string name="onboarding_header_3">Vision</string>
-    <string name="onboarding_description_1">Play your part in getting promises fulfiiled</string>
+    <string name="onboarding_description_1">Play your part in getting promises fulfilled</string>
     <string name="onboarding_description_2">Together they can be  accountable</string>
     <string name="onboarding_description_3">Get notified when  promises are verified</string>
     <string name="skip">Skip</string>
-    <string name="get_started">Get Started</string>
+    <string name="get_started">Get Started,</string>
     <string name="welcome">Welcome,</string>
     <string name="app_logo">app logo</string>
 
@@ -15,7 +15,7 @@
     <string name="email_address">Email address</string>
     <string name="password">Password</string>
     <string name="sign_in">Sign in</string>
-    <string name="no_account">Dont have an account?</string>
+    <string name="no_account">Don\'t have an account?</string>
     <string name="sign_up">Sign up</string>
     <string name="fp_rest">Forgotten password? Reset</string>
     <string name="full_name">Full Name</string>
@@ -24,7 +24,7 @@
     <string name="home">Home</string>
     <string name="notification">Notification</string>
     <string name="profile">Profile</string>
-    <string name="search_bar_hint">search for your preffered politician</string>
+    <string name="search_bar_hint">Search for your preferred politician</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
