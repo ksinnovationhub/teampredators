@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.sdn.teampredators.polima.R
-import com.sdn.teampredators.polima.data.models.AspirantDto
 import com.sdn.teampredators.polima.databinding.FragmentHomeBinding
+import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -17,9 +17,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private val viewModel by viewModels<HomeViewModel>()
-    private val firestoreAdapter: PolimaFirestoreAdapter by lazy {
-        PolimaFirestoreAdapter()
+    private val politicianAdapter: PolimaPoliticianAdapter by lazy {
+        PolimaPoliticianAdapter()
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpAspirantData()
@@ -30,11 +31,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewModel.getData()
     }
 
-    private fun setUpObservers(){
+    private fun setUpObservers() {
         lifecycleScope.launchWhenStarted {
             viewModel.aspirantData.collectLatest {
-                when(it) {
-                    is ListResult.Success-> success(it.list)
+                when (it) {
+                    is ListResult.Success -> success(it.list)
                     is ListResult.Error -> error(it.error)
                     is ListResult.Loading -> loading()
                 }
@@ -51,10 +52,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         progressBar.root.viewState(false)
     }
 
-    private fun success(data: List<AspirantDto>) = with(binding) {
-        firestoreAdapter.submitList(data)
-        binding.aspirantRecyclerView.adapter = firestoreAdapter
+    private fun success(data: List<Politician>) = with(binding) {
+        politicianAdapter.submitList(data)
+        binding.aspirantRecyclerView.adapter = politicianAdapter
         progressBar.root.viewState(false)
     }
-
 }

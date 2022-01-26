@@ -4,16 +4,19 @@ buildscript {
         google()
         mavenCentral()
     }
+    ext {
+        nav_version = "2.3.5"
+        hilt_version = "2.38.1"
+        glide_version = "4.12.0"
+    }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.3"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
         classpath "junit:junit:4.13.2"
 
-        def navigationVersion = '2.3.0'
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
 
-        def hiltVersion = '2.38.1'
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
 
         classpath 'com.google.gms:google-services:4.3.10'  // Google Services plugin
 
