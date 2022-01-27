@@ -10,4 +10,7 @@
     <color name="progress_layout_background">#C1000000</color>
     <color name="bottom_nav_color">#F5F3F3</color>
     <color name="blur">#94000000</color>
+    <color name="gray">#EEEEEE</color>
+    <color name="dullBlack">#353434</color>
+    <color name="polima_red">#EE5E52</color>
 </resources>

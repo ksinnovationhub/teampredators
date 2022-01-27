@@ -1,5 +1,9 @@
 package com.sdn.teampredators.polima.ui.home.model
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Politician(
     val id: String,
     val fullName: String,
@@ -11,7 +15,7 @@ data class Politician(
     val politicalAspirations: String,
     val education: String,
     val promises: List<Promise>
-) {
+): Parcelable {
     constructor() : this(
         id = "",
         fullName = "",

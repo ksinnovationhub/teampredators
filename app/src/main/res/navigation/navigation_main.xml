@@ -51,5 +51,70 @@
         android:id="@+id/home"
         android:name="com.sdn.teampredators.polima.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/to_aspirantFragment"
+            app:destination="@id/aspirantFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/aspirantFragment"
+        android:name="com.sdn.teampredators.polima.ui.aspirant.AspirantFragment"
+        android:label="fragment_aspirant"
+        tools:layout="@layout/fragment_aspirant" >
+        <argument
+            android:name="politicianItem"
+            app:argType="com.sdn.teampredators.polima.ui.home.model.Politician" />
+        <action
+            android:id="@+id/to_voteFragment"
+            app:destination="@id/voteFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/to_verifyFragment"
+            app:destination="@id/verifyFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/voteFragment"
+        android:name="com.sdn.teampredators.polima.ui.aspirant.vote.VoteFragment"
+        android:label="fragment_vote"
+        tools:layout="@layout/fragment_vote" >
+        <argument
+            android:name="promisesItem"
+            app:argType="com.sdn.teampredators.polima.ui.home.model.Politician" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyFragment"
+        android:name="com.sdn.teampredators.polima.ui.aspirant.verify.VerifyFragment"
+        android:label="fragment_verify"
+        tools:layout="@layout/fragment_verify" >
+        <argument
+            android:name="verifiedItem"
+            app:argType="com.sdn.teampredators.polima.ui.home.model.Politician" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.sdn.teampredators.polima.ui.aspirant.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <argument
+            android:name="profileItem"
+            app:argType="com.sdn.teampredators.polima.ui.home.model.Politician" />
+    </fragment>
 </navigation>

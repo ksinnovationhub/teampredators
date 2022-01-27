@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/gray"
+        android:elevation="@dimen/card_medium_radius"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/vote_header_text"
+                style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Canditate’s Verified Promises Fullied" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/vote_promises_text"
+                style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/dullBlack"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/vote_up"
+                app:layout_constraintEnd_toStartOf="@+id/vote_up"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vote_header_text"
+                tools:text="Ban on government officials on going abroad for medical treatment" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/vote_up"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_vote_circle"
+                android:backgroundTint="@color/polima_green"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="@+id/vote_down"
+                app:layout_constraintEnd_toStartOf="@+id/vote_down"
+                app:layout_constraintTop_toTopOf="@+id/vote_down"
+                app:srcCompat="@drawable/ic_thumb_up" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/vote_down"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/bg_vote_circle"
+                android:backgroundTint="@color/polima_red"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_thumb_down" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

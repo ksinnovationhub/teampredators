@@ -24,3 +24,4 @@ sealed class AuthenticationState {
 sealed class GenericActions {
     data class Navigate(val destination: NavDirections) : GenericActions()
 }
+

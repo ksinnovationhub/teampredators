@@ -1,11 +1,14 @@
 package com.sdn.teampredators.polima.ui.home
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.utils.DummyPoliticalData
+import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.ListResult
+import com.sdn.teampredators.polima.utils.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -20,6 +23,9 @@ class HomeViewModel @Inject constructor(private val db: FirebaseFirestore) : Vie
 
     private val _aspirantData = MutableSharedFlow<ListResult<Politician>>()
     val aspirantData = _aspirantData.asSharedFlow()
+
+    private val _action = SingleLiveEvent<GenericActions>()
+    val action : LiveData<GenericActions> = _action
 
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         Timber.e(throwable)
@@ -65,5 +71,9 @@ class HomeViewModel @Inject constructor(private val db: FirebaseFirestore) : Vie
                 )
             })
         }
+    }
+
+    fun toAspirantTask(item: Politician) {
+        _action.value = GenericActions.Navigate(HomeFragmentDirections.toAspirantFragment(item))
     }
 }

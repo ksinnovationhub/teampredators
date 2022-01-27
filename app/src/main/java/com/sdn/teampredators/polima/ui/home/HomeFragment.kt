@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.FragmentHomeBinding
 import com.sdn.teampredators.polima.ui.home.model.Politician
@@ -13,12 +14,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : Fragment(R.layout.fragment_home), ToAspirantTask {
 
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private val viewModel by viewModels<HomeViewModel>()
     private val politicianAdapter: PolimaPoliticianAdapter by lazy {
-        PolimaPoliticianAdapter()
+        PolimaPoliticianAdapter(this)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,6 +42,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 }
             }
         }
+        viewModel.action.observe(viewLifecycleOwner) {
+            when (it) {
+                is GenericActions.Navigate -> findNavController().navigate(it.destination)
+            }
+        }
     }
 
     private fun loading() = with(binding) {
@@ -56,5 +62,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         politicianAdapter.submitList(data)
         binding.aspirantRecyclerView.adapter = politicianAdapter
         progressBar.root.viewState(false)
+    }
+
+    override fun toAspirantTask(item: Politician) {
+        viewModel.toAspirantTask(item)
     }
 }
