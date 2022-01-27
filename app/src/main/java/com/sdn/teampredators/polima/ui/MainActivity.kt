@@ -48,6 +48,17 @@ class MainActivity : AppCompatActivity() {
                     showBottomNavigation()
                     homeStatusBar()
                 }
+                R.id.aspirantFragment ->{
+                    showBottomNavigation()
+                    aspirantTaskStatusBar()
+                }
+                R.id.profileFragment -> {
+                    showBottomNavigation()
+                    homeStatusBar()
+                }
+                R.id.voteFragment -> showBottomNavigation()
+                R.id.verifyFragment -> showBottomNavigation()
+
                 else -> hideBottomNavigation()
             }
         }
@@ -56,7 +67,6 @@ class MainActivity : AppCompatActivity() {
     private fun showBottomNavigation() = with(binding) {
         bottomNavigationView.viewState(true)
         TransitionManager.beginDelayedTransition(binding.root, Slide(Gravity.END).excludeTarget(R.id.nav_host_fragment_container, true))
-
     }
 
     private fun hideBottomNavigation() = with(binding) {
@@ -67,4 +77,9 @@ class MainActivity : AppCompatActivity() {
     private fun homeStatusBar(){
         window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.polima_green)
     }
+
+    private fun aspirantTaskStatusBar(){
+        window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.white)
+    }
+
 }

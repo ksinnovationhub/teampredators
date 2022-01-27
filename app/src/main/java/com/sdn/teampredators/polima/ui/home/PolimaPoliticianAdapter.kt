@@ -10,7 +10,9 @@ import com.sdn.teampredators.polima.databinding.AspirantItemLayoutBinding
 import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.utils.load
 
-class PolimaPoliticianAdapter :
+class PolimaPoliticianAdapter(
+    private val navigate: ToAspirantTask
+) :
     ListAdapter<Politician, PolimaPoliticianAdapter.FirestoreViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FirestoreViewHolder {
@@ -33,7 +35,9 @@ class PolimaPoliticianAdapter :
             aspirantParty.text = item.party
             aspirantPosition.text = item.position
             aspirantImage.load(item.photoUrl)
-            root.setOnClickListener {  }
+            root.setOnClickListener {
+                navigate.toAspirantTask(item)
+            }
         }
     }
 
@@ -54,4 +58,8 @@ class PolimaPoliticianAdapter :
             }
         }
     }
+}
+
+interface ToAspirantTask{
+    fun toAspirantTask(item: Politician)
 }
