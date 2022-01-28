@@ -1,7 +1,7 @@
 package com.sdn.teampredators.polima.ui.home.model
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Promise(
@@ -10,7 +10,7 @@ data class Promise(
     val promiseDescription: String,
     val upVoteCount: Long = 0,
     val downVoteCount: Long = 0,
-    val userIds: List<String> = emptyList()
+    val userIds: MutableList<String> = mutableListOf()
 ): Parcelable {
     constructor(): this(id = "", promise = "", promiseDescription = "")
 }

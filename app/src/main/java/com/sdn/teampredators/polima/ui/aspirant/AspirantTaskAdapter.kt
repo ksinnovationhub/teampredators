@@ -7,13 +7,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.AspirantTaskItemBinding
-import com.sdn.teampredators.polima.ui.home.model.Politician
 
 class AspirantTaskAdapter(
-    val politicianItem: Politician,
-    val navigation: ToAspirantThreeScreens
-) :
-    ListAdapter<AspirantTaskItem, AspirantTaskAdapter.AspirantTaskViewHolder>(DIFF_UTIL) {
+    val navigation: (AspirantDestinations) -> Unit
+) : ListAdapter<AspirantItem, AspirantTaskAdapter.AspirantTaskViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AspirantTaskViewHolder {
         return AspirantTaskViewHolder(
@@ -34,7 +31,7 @@ class AspirantTaskAdapter(
 
         val cardView = binding.taskCard
 
-        fun bind(item: AspirantTaskItem) = with(binding) {
+        fun bind(item: AspirantItem) = with(binding) {
             val context = root.context
             taskHeaderText.text = context.getText(item.taskHeader)
             taskContentText.text = context.getText(item.taskContent)
@@ -44,31 +41,25 @@ class AspirantTaskAdapter(
 
         fun navigate(position: Int) {
             when (position) {
-                0 -> {
-                    navigation.toVote(politicianItem)
-                }
-                1 -> {
-                    navigation.toVerify(politicianItem)
-                }
-                2 -> {
-                    navigation.toProfile(politicianItem)
-                }
+                0 -> { navigation.invoke(AspirantDestinations.Vote) }
+                1 -> { navigation.invoke(AspirantDestinations.Verify) }
+                2 -> { navigation.invoke(AspirantDestinations.Profile) }
             }
         }
     }
 
     companion object {
-        val DIFF_UTIL = object : DiffUtil.ItemCallback<AspirantTaskItem>() {
+        val DIFF_UTIL = object : DiffUtil.ItemCallback<AspirantItem>() {
             override fun areItemsTheSame(
-                oldItem: AspirantTaskItem,
-                newItem: AspirantTaskItem
+                oldItem: AspirantItem,
+                newItem: AspirantItem
             ): Boolean {
                 return oldItem.taskImage == newItem.taskImage
             }
 
             override fun areContentsTheSame(
-                oldItem: AspirantTaskItem,
-                newItem: AspirantTaskItem
+                oldItem: AspirantItem,
+                newItem: AspirantItem
             ): Boolean {
                 return oldItem == newItem
             }
@@ -76,8 +67,8 @@ class AspirantTaskAdapter(
     }
 }
 
-interface ToAspirantThreeScreens {
-    fun toVote(item: Politician)
-    fun toVerify(item: Politician)
-    fun toProfile(item: Politician)
+sealed class AspirantDestinations {
+    object Vote : AspirantDestinations()
+    object Verify : AspirantDestinations()
+    object Profile : AspirantDestinations()
 }

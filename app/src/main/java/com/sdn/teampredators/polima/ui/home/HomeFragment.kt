@@ -12,15 +12,18 @@ import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.onStart
 
 @AndroidEntryPoint
-class HomeFragment : Fragment(R.layout.fragment_home), ToAspirantTask {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val binding by viewBinding(FragmentHomeBinding::bind)
     private val viewModel by viewModels<HomeViewModel>()
-    private val politicianAdapter: PolimaPoliticianAdapter by lazy {
-        PolimaPoliticianAdapter(this)
-    }
+    private val politicianAdapter: PolimaPoliticianAdapter =
+        PolimaPoliticianAdapter(navigate = { item ->
+            viewModel.toAspirantTask(item)
+        })
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,11 +37,13 @@ class HomeFragment : Fragment(R.layout.fragment_home), ToAspirantTask {
 
     private fun setUpObservers() {
         lifecycleScope.launchWhenStarted {
-            viewModel.aspirantData.collectLatest {
+            viewModel.aspirantData
+                .onStart { loading() }
+                .collectLatest {
                 when (it) {
                     is ListResult.Success -> success(it.list)
                     is ListResult.Error -> error(it.error)
-                    is ListResult.Loading -> loading()
+                    is ListResult.Loading -> loading()  // this thing no dey work!
                 }
             }
         }
@@ -62,9 +67,5 @@ class HomeFragment : Fragment(R.layout.fragment_home), ToAspirantTask {
         politicianAdapter.submitList(data)
         binding.aspirantRecyclerView.adapter = politicianAdapter
         progressBar.root.viewState(false)
-    }
-
-    override fun toAspirantTask(item: Politician) {
-        viewModel.toAspirantTask(item)
     }
 }
