@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Polima)
         setContentView(binding.root)
         setUpBottomNav()
+        binding.bottomNavigationView.getOrCreateBadge(R.id.notificationFragment)
     }
 
     private fun setUpBottomNav() = with(binding) {

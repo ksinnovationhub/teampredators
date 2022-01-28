@@ -57,7 +57,7 @@
     
     <style name="TextAppearance.AppCompat.Body1.OtherText">
         <item name="fontFamily">@font/muli</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:text">@string/no_account</item>
     </style>
