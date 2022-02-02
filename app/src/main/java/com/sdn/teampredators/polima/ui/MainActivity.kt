@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.view.Gravity
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import androidx.transition.Slide
 import androidx.transition.TransitionManager
@@ -22,7 +21,12 @@ import kotlinx.coroutines.runBlocking
 class MainActivity : AppCompatActivity() {
 
     private val binding by viewBinding(ActivityMainBinding::inflate)
-    private lateinit var navController: NavController
+    private val navController: NavController by lazy {
+        Navigation.findNavController(
+            this,
+            R.id.nav_host_fragment_container
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,34 +35,29 @@ class MainActivity : AppCompatActivity() {
 
         setTheme(R.style.Polima)
         setContentView(binding.root)
-        setUpNavHost()
+        setUpBottomNav()
     }
 
-    private fun setUpNavHost() = with(binding){
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
-        navController = navHostFragment.findNavController()
-        bottomNavigationView.apply{
+    private fun setUpBottomNav() = with(binding) {
+        bottomNavigationView.apply {
             setupWithNavController(navController)
-            setOnItemReselectedListener {  }
+            setOnItemReselectedListener { }
         }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            when(destination.id){
-                R.id.home -> {
+            when (destination.id) {
+                R.id.home, R.id.notificationFragment, R.id.userProfileFragment -> {
                     showBottomNavigation()
                     homeStatusBar()
                 }
-                R.id.aspirantFragment ->{
-                    showBottomNavigation()
-                    aspirantTaskStatusBar()
+                R.id.aspirantFragment -> {
+                    hideBottomNavigation()
+                    aspirantStatusBar()
                 }
                 R.id.profileFragment -> {
-                    showBottomNavigation()
+                    hideBottomNavigation()
                     homeStatusBar()
                 }
-                R.id.voteFragment -> showBottomNavigation()
-                R.id.verifyFragment -> showBottomNavigation()
-
                 else -> hideBottomNavigation()
             }
         }
@@ -66,20 +65,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun showBottomNavigation() = with(binding) {
         bottomNavigationView.viewState(true)
-        TransitionManager.beginDelayedTransition(binding.root, Slide(Gravity.END).excludeTarget(R.id.nav_host_fragment_container, true))
+        TransitionManager.beginDelayedTransition(
+            binding.root,
+            Slide(Gravity.END).excludeTarget(R.id.nav_host_fragment_container, true)
+        )
     }
 
     private fun hideBottomNavigation() = with(binding) {
-        TransitionManager.beginDelayedTransition(binding.root, Slide(Gravity.BOTTOM).excludeTarget(R.id.nav_host_fragment_container, true))
+        TransitionManager.beginDelayedTransition(
+            binding.root,
+            Slide(Gravity.BOTTOM).excludeTarget(R.id.nav_host_fragment_container, true)
+        )
         bottomNavigationView.viewState(false)
     }
 
-    private fun homeStatusBar(){
+    private fun homeStatusBar() {
         window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.polima_green)
     }
 
-    private fun aspirantTaskStatusBar(){
+    private fun aspirantStatusBar() {
         window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.white)
     }
-
 }

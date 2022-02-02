@@ -1,7 +1,7 @@
 package com.sdn.teampredators.polima.ui.home.model
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Politician(

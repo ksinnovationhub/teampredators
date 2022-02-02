@@ -10,32 +10,32 @@ import com.sdn.teampredators.polima.utils.SingleLiveEvent
 
 class AspirantViewModel : ViewModel() {
 
-    private val _uiState = MutableLiveData<AspirantTaskState>()
-    val uiState: LiveData<AspirantTaskState> = _uiState
+    private val _uiState = MutableLiveData<AspirantState>()
+    val uiState: LiveData<AspirantState> = _uiState
 
     private val _action = SingleLiveEvent<GenericActions>()
     val action: LiveData<GenericActions> = _action
 
-    init{
+    init {
         val taskContent = listOf(
-            AspirantTaskItem(
+            AspirantItem(
                 taskImage = R.drawable.ic_vote,
                 taskHeader = R.string.vote,
                 taskContent = R.string.long_text
             ),
-            AspirantTaskItem(
+            AspirantItem(
                 taskImage = R.drawable.ic_verified,
                 taskHeader = R.string.check,
                 taskContent = R.string.long_text
             ),
-            AspirantTaskItem(
+            AspirantItem(
                 taskImage = R.drawable.ic_person,
                 taskHeader = R.string.view,
                 taskContent = R.string.long_text
             )
         )
 
-        _uiState.value = AspirantTaskState.Content(taskContent)
+        _uiState.value = AspirantState.Content(taskContent)
 
     }
 
@@ -43,15 +43,17 @@ class AspirantViewModel : ViewModel() {
         _action.value = GenericActions.Navigate(AspirantFragmentDirections.toVoteFragment(promises))
     }
 
-    fun toVerifyPromises(verifyPromises: Politician){
-        _action.value = GenericActions.Navigate(AspirantFragmentDirections.toVerifyFragment(verifyPromises))
+    fun toVerifyPromises(verifyPromises: Politician) {
+        _action.value =
+            GenericActions.Navigate(AspirantFragmentDirections.toVerifyFragment(verifyPromises))
     }
 
-    fun toAspirantProfile(profileDetails: Politician){
-        _action.value = GenericActions.Navigate(AspirantFragmentDirections.toProfileFragment(profileDetails))
+    fun toAspirantProfile(profileDetails: Politician) {
+        _action.value =
+            GenericActions.Navigate(AspirantFragmentDirections.toProfileFragment(profileDetails))
     }
 }
 
-sealed class AspirantTaskState {
-    data class Content(val taskItem: List<AspirantTaskItem>) : AspirantTaskState()
+sealed class AspirantState {
+    data class Content(val item: List<AspirantItem>) : AspirantState()
 }

@@ -27,13 +27,11 @@ class VerifyAdapter: ListAdapter<Promise, VerifyAdapter.VerifyViewHolder>(DIFF_U
     inner class VerifyViewHolder(private val binding: VerifyItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-
         fun bind(item: Promise) = with(binding) {
             verifyHeaderText.text= item.promise
             verifyPromisesText.text = item.promiseDescription
             verifyVoteNumbersUp.text = item.upVoteCount.toString()
             verifyVoteNumbersDown.text = item.downVoteCount.toString()
-
         }
     }
 

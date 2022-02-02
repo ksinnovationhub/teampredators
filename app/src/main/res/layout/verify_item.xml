@@ -1,92 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginBottom="16dp"
+    android:backgroundTint="@color/gray"
+    android:elevation="@dimen/card_medium_radius"
+    app:cardUseCompatPadding="true">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/gray"
-        android:elevation="@dimen/card_medium_radius"
-        app:cardUseCompatPadding="true">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/verify_header_text"
-                style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="@dimen/small_margin"
-                android:layout_marginEnd="8dp"
-                android:text="Canditate’s Verified Promises Fullied"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@+id/verify_vote_numbers_up"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/verify_header_text"
+            style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/verify_vote_numbers_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Canditate’s Verified Promises Fullied" />
 
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/verify_promises_text"
-                style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:textColor="@color/dullBlack"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/verify_vote_numbers_down"
-                app:layout_constraintStart_toStartOf="@+id/verify_header_text"
-                app:layout_constraintTop_toBottomOf="@+id/verify_header_text"
-                tools:text="Ban on government officials on going abroad for medical treatment" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/verify_promises_text"
+            style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/dullBlack"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/verify_vote_numbers_down"
+            app:layout_constraintStart_toStartOf="@+id/verify_header_text"
+            app:layout_constraintTop_toBottomOf="@+id/verify_header_text"
+            tools:text="Ban on government officials on going abroad for medical treatment" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/verify_vote_numbers_up"
-                style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:drawableStart="@drawable/ic_thumb_up"
-                android:drawablePadding="4dp"
-                android:drawableTint="@color/polima_green"
-                android:textColor="@color/polima_green"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.22000003"
-                tools:text="0" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/verify_vote_numbers_up"
+            style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:drawableStart="@drawable/ic_thumb_up"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/polima_green"
+            android:textColor="@color/polima_green"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22000003"
+            tools:text="0" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/verify_vote_numbers_down"
-                style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:drawableStart="@drawable/ic_thumb_down"
-                android:drawablePadding="4dp"
-                android:drawableTint="@color/polima_red"
-                android:textColor="@color/polima_red"
-                android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/verify_vote_numbers_up"
-                app:layout_constraintStart_toStartOf="@+id/verify_vote_numbers_up"
-                app:layout_constraintTop_toBottomOf="@+id/verify_vote_numbers_up"
-                tools:text="0" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/verify_vote_numbers_down"
+            style="@style/TextAppearance.AppCompat.Display1.TitleText.itemDisplay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@drawable/ic_thumb_down"
+            android:drawablePadding="4dp"
+            android:drawableTint="@color/polima_red"
+            android:textColor="@color/polima_red"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="@+id/verify_vote_numbers_up"
+            app:layout_constraintStart_toStartOf="@+id/verify_vote_numbers_up"
+            app:layout_constraintTop_toBottomOf="@+id/verify_vote_numbers_up"
+            tools:text="0" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </com.google.android.material.card.MaterialCardView>
-
-</RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

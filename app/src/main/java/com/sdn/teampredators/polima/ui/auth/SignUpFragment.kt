@@ -31,7 +31,16 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         signUpButton.setOnClickListener {
             val email = etSignUpEmail.text.toString().trim()
             val password = etSignUpPassword.text.toString()
-            viewModel.doSignUp(email, password)
+            val nin = etNin.text.toString().trim()
+            val fullName = etFullName.text.toString().trim()
+            val gender = etGender.text.toString().trim()
+            viewModel.doSignUp(
+                email = email,
+                password = password,
+                fullName = fullName,
+                nin = nin,
+                gender = gender
+            )
         }
     }
 

@@ -15,6 +15,14 @@ infix fun ImageView.load(file: String?) {
         .into(this)
 }
 
+infix fun ImageView.loadRoundImage(imageUrl: String?) {
+    Glide.with(this)
+        .applyDefaultRequestOptions(requestManger())
+        .load(imageUrl)
+        .circleCrop()
+        .into(this)
+}
+
 private fun requestManger() =
     RequestOptions()
         .placeholder(R.drawable.ic_launcher_background)

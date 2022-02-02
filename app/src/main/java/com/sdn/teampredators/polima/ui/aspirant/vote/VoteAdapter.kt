@@ -9,8 +9,10 @@ import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.VoteItemBinding
 import com.sdn.teampredators.polima.ui.home.model.Promise
 
-class VoteAdapter :
-    ListAdapter<Promise, VoteAdapter.VoteViewHolder>(DIFF_UTIL) {
+class VoteAdapter(
+    private val onVoteUp: (String) -> Unit,
+    private val onVoteDown: (String) -> Unit
+) : ListAdapter<Promise, VoteAdapter.VoteViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VoteViewHolder {
         return VoteViewHolder(
@@ -28,11 +30,11 @@ class VoteAdapter :
     inner class VoteViewHolder(private val binding: VoteItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-
         fun bind(item: Promise) = with(binding) {
-            voteHeaderText.text= item.promise
+            voteHeaderText.text = item.promise
             votePromisesText.text = item.promiseDescription
-
+            voteUp.setOnClickListener { onVoteUp.invoke(item.id) }
+            voteDown.setOnClickListener { onVoteDown.invoke(item.id) }
         }
     }
 
