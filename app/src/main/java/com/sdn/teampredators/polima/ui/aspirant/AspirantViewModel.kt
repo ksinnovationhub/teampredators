@@ -21,17 +21,17 @@ class AspirantViewModel : ViewModel() {
             AspirantItem(
                 taskImage = R.drawable.ic_vote,
                 taskHeader = R.string.vote,
-                taskContent = R.string.long_text
+                taskContent = R.string.vote_description
             ),
             AspirantItem(
                 taskImage = R.drawable.ic_verified,
                 taskHeader = R.string.check,
-                taskContent = R.string.long_text
+                taskContent = R.string.check_verified_promises_description
             ),
             AspirantItem(
                 taskImage = R.drawable.ic_person,
                 taskHeader = R.string.view,
-                taskContent = R.string.long_text
+                taskContent = R.string.candidate_bio_description
             )
         )
 

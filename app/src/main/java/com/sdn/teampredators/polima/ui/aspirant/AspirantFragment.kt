@@ -21,8 +21,8 @@ class AspirantFragment : Fragment(R.layout.fragment_aspirant) {
     private val viewModel by viewModels<AspirantViewModel>()
     private val args by navArgs<AspirantFragmentArgs>()
 
-    private val taskAdapter: AspirantTaskAdapter =
-        AspirantTaskAdapter(
+    private val adapter: AspirantAdapter =
+        AspirantAdapter(
             navigation = { destination ->
                 when (destination) {
                     is AspirantDestinations.Vote -> viewModel.toVotePromises(args.politicianItem)
@@ -53,7 +53,7 @@ class AspirantFragment : Fragment(R.layout.fragment_aspirant) {
     }
 
     private fun setUpAdapter() = with(binding) {
-        taskRecyclerView.adapter = taskAdapter
+        taskRecyclerView.adapter = adapter
     }
 
     private fun setupObservers() {
@@ -70,7 +70,7 @@ class AspirantFragment : Fragment(R.layout.fragment_aspirant) {
     }
 
     private fun renderContent(item: List<AspirantItem>) {
-        taskAdapter.submitList(item)
+        adapter.submitList(item)
     }
 
     private fun setUpTaskProfile() = with(binding) {
