@@ -12,21 +12,21 @@ import com.sdn.teampredators.polima.utils.load
 
 class PolimaPoliticianAdapter(
     private val navigate: (Politician) -> Unit
-) : ListAdapter<Politician, PolimaPoliticianAdapter.FirestoreViewHolder>(DIFF_UTIL) {
+) : ListAdapter<Politician, PolimaPoliticianAdapter.PolimaPoliticianViewHolder>(DIFF_UTIL) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FirestoreViewHolder {
-        return FirestoreViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PolimaPoliticianViewHolder {
+        return PolimaPoliticianViewHolder(
             AspirantItemLayoutBinding.bind(
                 LayoutInflater.from(parent.context).inflate(R.layout.aspirant_item_layout, parent, false)
             )
         )
     }
 
-    override fun onBindViewHolder(holder: PolimaPoliticianAdapter.FirestoreViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PolimaPoliticianAdapter.PolimaPoliticianViewHolder, position: Int) {
         holder.bind(getItem(position))
     }
 
-    inner class FirestoreViewHolder(private val binding: AspirantItemLayoutBinding) :
+    inner class PolimaPoliticianViewHolder(private val binding: AspirantItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Politician) = with(binding) {

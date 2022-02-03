@@ -3,7 +3,7 @@
     <string name="onboarding_header_1">Citizens</string>
     <string name="onboarding_header_2">Statement</string>
     <string name="onboarding_header_3">Vision</string>
-    <string name="onboarding_description_1">Play your part in getting promises fulfilled</string>
+    <string name="onboarding_description_1">Play your part in getting electoral promises fulfilled</string>
     <string name="onboarding_description_2">Together they can be  accountable</string>
     <string name="onboarding_description_3">Get notified when promises are verified</string>
     <string name="skip">Skip</string>
@@ -34,7 +34,12 @@
     <string name="education">Education</string>
     <string name="age">Age: </string>
     <string name="political_aspirations">Political aspirations</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
+    <string name="sign_in_description">Sign in to view politicians details, and the various  promises made during campaigns</string>
+    <string name="sign_up_description">Sign up to get access to view and vote on promises made by Politicians</string>
+    <string name="vote_description">Vote on the promises verified if it\'s been fulfilled or abandoned. This helps in maintaining accountability in the system. \nBe a part in making your voice count</string>
+    <string name="candidate_bio_description">View information and biography of politicians and their political history.</string>
+    <string name="check_verified_promises_description">Find out how many users have voted and the promises that have been fulfilled or not fulfilled</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>

@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.AspirantTaskItemBinding
 
-class AspirantTaskAdapter(
-    val navigation: (AspirantDestinations) -> Unit
-) : ListAdapter<AspirantItem, AspirantTaskAdapter.AspirantTaskViewHolder>(DIFF_UTIL) {
+class AspirantAdapter(val navigation: (AspirantDestinations) -> Unit) :
+    ListAdapter<AspirantItem, AspirantAdapter.AspirantTaskViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AspirantTaskViewHolder {
         return AspirantTaskViewHolder(
@@ -36,14 +35,19 @@ class AspirantTaskAdapter(
             taskHeaderText.text = context.getText(item.taskHeader)
             taskContentText.text = context.getText(item.taskContent)
             taskImage.setImageResource(item.taskImage)
-
         }
 
         fun navigate(position: Int) {
             when (position) {
-                0 -> { navigation.invoke(AspirantDestinations.Vote) }
-                1 -> { navigation.invoke(AspirantDestinations.Verify) }
-                2 -> { navigation.invoke(AspirantDestinations.Profile) }
+                0 -> {
+                    navigation.invoke(AspirantDestinations.Vote)
+                }
+                1 -> {
+                    navigation.invoke(AspirantDestinations.Verify)
+                }
+                2 -> {
+                    navigation.invoke(AspirantDestinations.Profile)
+                }
             }
         }
     }

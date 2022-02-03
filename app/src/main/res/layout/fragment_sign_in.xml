@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/sub_text_top_margin"
                 android:layout_marginEnd="@dimen/default_margin"
-                android:text="@string/long_text"
+                android:text="@string/sign_in_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/header_text"
                 app:layout_constraintTop_toBottomOf="@+id/header_text" />

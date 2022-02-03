@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.ui.home.model.Promise
@@ -17,10 +16,7 @@ import kotlinx.coroutines.tasks.await
 import timber.log.Timber
 
 @HiltViewModel
-class VerifyViewModel @Inject constructor(
-    private val db: FirebaseFirestore,
-    private val auth: FirebaseAuth
-) : ViewModel() {
+class VerifyViewModel @Inject constructor(private val db: FirebaseFirestore) : ViewModel() {
 
     private val _uiState = MutableLiveData<VerifyPromiseStates>()
     val uiState: LiveData<VerifyPromiseStates> = _uiState
@@ -36,9 +32,7 @@ class VerifyViewModel @Inject constructor(
             val snapshot = db.collection(POLITICIAN_COLLECTION).document(politicianId).get().await()
             snapshot.toObject(Politician::class.java)
         }.onSuccess { response ->
-            val promises = response!!.promises.filter {
-                it.userIds.contains(auth.uid)
-            }
+            val promises = response!!.promises
             if (promises.isEmpty()) {
                 _uiState.postValue(VerifyPromiseStates.Success.EmptyPromises)
             } else {
