@@ -27,20 +27,24 @@
         <entry key="app/src/main/res/drawable/selector_tab_pager.xml" value="0.1115" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/aspirant_item_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/dialog_show_notification.xml" value="0.2116289012398461" />
+        <entry key="app/src/main/res/layout/fragment_aspirant.xml" value="0.2089489235964542" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.3271422541156606" />
+        <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.25384615384615383" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_user_profile.xml" value="0.3271422541156606" />
+        <entry key="app/src/main/res/layout/fragment_verify.xml" value="0.2089489235964542" />
         <entry key="app/src/main/res/layout/fragment_vote.xml" value="0.30954587581093607" />
         <entry key="app/src/main/res/layout/item_onboarding.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_progress_bar.xml" value="0.2578125" />
+        <entry key="app/src/main/res/layout/notification_item_layout.xml" value="0.33133817870884996" />
         <entry key="app/src/main/res/layout/search_bar_layout.xml" value="0.33133817870884996" />
         <entry key="app/src/main/res/layout/verify_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/vote_item.xml" value="0.22" />
-        <entry key="app/src/main/res/menu/bottom_nav_item.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/bottom_nav_item.xml" value="0.25" />
       </map>
     </option>
   </component>

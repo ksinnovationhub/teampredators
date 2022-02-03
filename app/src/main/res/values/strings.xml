@@ -23,6 +23,7 @@
     <string name="gender">Gender</string>
     <string name="home">Home</string>
     <string name="notification">Notification</string>
+    <string name="notifications">Notifications</string>
     <string name="profile">Profile</string>
     <string name="user_profile">User Profile</string>
     <string name="vote">Vote on fulfilled promises</string>
@@ -33,6 +34,7 @@
     <string name="education">Education</string>
     <string name="age">Age: </string>
     <string name="political_aspirations">Political aspirations</string>
+    <string name="ok">Ok</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
