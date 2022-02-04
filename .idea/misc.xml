@@ -42,7 +42,7 @@
         <entry key="app/src/main/res/layout/item_onboarding.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_progress_bar.xml" value="0.2578125" />
         <entry key="app/src/main/res/layout/notification_item_layout.xml" value="0.33133817870884996" />
-        <entry key="app/src/main/res/layout/search_bar_layout.xml" value="0.33133817870884996" />
+        <entry key="app/src/main/res/layout/search_bar_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/verify_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/vote_item.xml" value="0.22" />
         <entry key="app/src/main/res/menu/bottom_nav_item.xml" value="0.25" />

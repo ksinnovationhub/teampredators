@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/search_edit_text"
         style="@style/SearchBar"
         android:layout_width="match_parent"
         android:layout_height="48dp"

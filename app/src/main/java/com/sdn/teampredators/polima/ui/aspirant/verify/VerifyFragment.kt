@@ -71,6 +71,6 @@ class VerifyFragment : Fragment(R.layout.fragment_verify) {
 
     private fun handleError(error: Throwable) {
         binding.progressBar.root.viewState(state = false)
-        binding.root.showMessage(error.localizedMessage ?: "")
+        binding.root.showMessage(error.localizedMessage)
     }
 }

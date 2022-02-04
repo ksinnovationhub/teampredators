@@ -40,6 +40,7 @@
     <string name="vote_description">Vote on the promises verified if it\'s been fulfilled or abandoned. This helps in maintaining accountability in the system. \nBe a part in making your voice count</string>
     <string name="candidate_bio_description">View information and biography of politicians and their political history.</string>
     <string name="check_verified_promises_description">Find out how many users have voted and the promises that have been fulfilled or not fulfilled</string>
+    <string name="politician_note_found">Politician Note Found!</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>
