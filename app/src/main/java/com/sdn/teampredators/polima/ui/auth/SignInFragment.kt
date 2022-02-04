@@ -63,7 +63,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     }
 
     private fun error(message: String?) = with(binding) {
-        root.showMessage(message ?: " ")
+        root.showMessage(message)
         progressBar.root.viewState(false)
     }
 

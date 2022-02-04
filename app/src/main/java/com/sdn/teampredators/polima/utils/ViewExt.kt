@@ -34,6 +34,6 @@ fun View.viewState(state: Boolean) {
     this.isVisible = state
 }
 
-fun View.showMessage(msg: String) {
-    Snackbar.make(this, msg, Snackbar.LENGTH_LONG).show()
+fun View.showMessage(msg: String?) {
+    msg?.let { Snackbar.make(this, it, Snackbar.LENGTH_LONG).show() }
 }
