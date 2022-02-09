@@ -11,9 +11,9 @@
         android:theme="@style/SplashScreenTheme"
         android:name="com.sdn.teampredators.polima.PolimaApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_app_name"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_app_name"
         android:supportsRtl="true">
         <activity
             android:name=".ui.MainActivity"
