@@ -8,4 +8,6 @@ data class User(
     val gender: String,
     val profilePhoto: String = "",
     val promises: List<String> = emptyList()
-)
+) {
+    constructor() : this("", "", "", "", "")
+}

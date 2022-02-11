@@ -15,7 +15,7 @@ infix fun ImageView.load(file: String?) {
         .into(this)
 }
 
-infix fun ImageView.loadRoundImage(imageUrl: String?) {
+infix fun ImageView.loadRoundImage(imageUrl: Any?) {
     Glide.with(this)
         .applyDefaultRequestOptions(requestManger())
         .load(imageUrl)
