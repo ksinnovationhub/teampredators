@@ -60,6 +60,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
     private fun loading() = with(binding) {
         progressBar.root.viewState(true)
+        hideSoftKeyboard(binding.root)
     }
 
     private fun error(message: String?) = with(binding) {

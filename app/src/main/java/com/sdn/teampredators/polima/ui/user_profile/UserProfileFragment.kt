@@ -2,12 +2,16 @@ package com.sdn.teampredators.polima.ui.user_profile
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.FragmentUserProfileBinding
 import com.sdn.teampredators.polima.ui.auth.model.User
+import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.loadRoundImage
+import com.sdn.teampredators.polima.utils.showGenericDialog
 import com.sdn.teampredators.polima.utils.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,17 +31,28 @@ class UserProfileFragment : Fragment(R.layout.fragment_user_profile) {
 
     private fun setupClickListeners() {
         binding.logoutButton.setOnClickListener {
-            // TODO: Display dialog first
-            viewModel.logout()
+            showGenericDialog(
+                message = getString(R.string.logout_message),
+                negativeButtonText = getString(R.string.cancel),
+                positiveButtonText = getString(R.string.logout),
+                buttonBackground = ContextCompat.getColor(requireContext(), R.color.polima_dark_red)
+            ) {
+                viewModel.logout()
+            }
         }
     }
 
     private fun setupObservers() {
         viewModel.userResponse.observe(viewLifecycleOwner) {
-            when(it) {
+            when (it) {
                 ProfileState.Loading -> {}
                 is ProfileState.Error -> {}
                 is ProfileState.Success -> displayContent(it.user)
+            }
+        }
+        viewModel.userProfileAction.observe(viewLifecycleOwner) {
+            when (it) {
+                is GenericActions.Navigate -> findNavController().navigate(it.destination)
             }
         }
     }

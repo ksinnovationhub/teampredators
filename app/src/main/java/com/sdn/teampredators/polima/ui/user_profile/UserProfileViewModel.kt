@@ -8,6 +8,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sdn.teampredators.polima.ui.auth.model.User
 import com.sdn.teampredators.polima.utils.Constants.USERS_COLLECTION
+import com.sdn.teampredators.polima.utils.GenericActions
+import com.sdn.teampredators.polima.utils.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -23,6 +25,9 @@ class UserProfileViewModel @Inject constructor(
 
     private val _userResponse: MutableLiveData<ProfileState> = MutableLiveData()
     val userResponse: LiveData<ProfileState> = _userResponse
+
+    private val _userProfileAction: SingleLiveEvent<GenericActions> = SingleLiveEvent()
+    val userProfileAction: LiveData<GenericActions> = _userProfileAction
 
     private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         _userResponse.postValue(ProfileState.Error(throwable))
@@ -54,9 +59,10 @@ class UserProfileViewModel @Inject constructor(
             kotlin.runCatching {
                 auth.signOut()
             }.onSuccess {
-                // TODO: Navigate to auth screen
+                val destination = UserProfileFragmentDirections.toSignInFragment()
+                _userProfileAction.postValue(GenericActions.Navigate(destination = destination))
             }.onFailure {
-
+                _userResponse.postValue(ProfileState.Error(it))
             }
         }
     }
