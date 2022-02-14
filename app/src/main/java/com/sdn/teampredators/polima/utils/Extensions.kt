@@ -1,8 +1,11 @@
 package com.sdn.teampredators.polima.utils
 
+import android.app.Activity
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
@@ -15,7 +18,7 @@ infix fun ImageView.load(file: String?) {
         .into(this)
 }
 
-infix fun ImageView.loadRoundImage(imageUrl: String?) {
+infix fun ImageView.loadRoundImage(imageUrl: Any?) {
     Glide.with(this)
         .applyDefaultRequestOptions(requestManger())
         .load(imageUrl)
@@ -36,4 +39,10 @@ fun View.viewState(state: Boolean) {
 
 fun View.showMessage(msg: String?) {
     msg?.let { Snackbar.make(this, it, Snackbar.LENGTH_LONG).show() }
+}
+
+fun Fragment.hideSoftKeyboard(view: View) {
+    val imm: InputMethodManager =
+        requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+    imm.hideSoftInputFromWindow(view.windowToken, 0)
 }

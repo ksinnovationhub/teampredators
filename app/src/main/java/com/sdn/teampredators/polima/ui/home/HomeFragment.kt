@@ -82,4 +82,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         }
     }
+
+    override fun onPause() {
+        super.onPause()
+        hideSoftKeyboard(binding.root)
+    }
 }

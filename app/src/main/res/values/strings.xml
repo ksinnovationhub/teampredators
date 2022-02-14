@@ -41,6 +41,14 @@
     <string name="candidate_bio_description">View information and biography of politicians and their political history.</string>
     <string name="check_verified_promises_description">Find out how many users have voted and the promises that have been fulfilled or not fulfilled</string>
     <string name="politician_note_found">Politician Note Found!</string>
+    <string name="nin">NIN</string>
+    <string name="email">Email</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="cancel">Cancel</string>
+    <string name="logout_message">Are you sure you want to logout?</string>
+    <string name="verificaation_message">A verification mail has been sent to your email address</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>

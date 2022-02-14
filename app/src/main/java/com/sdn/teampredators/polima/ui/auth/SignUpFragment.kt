@@ -81,6 +81,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
     private fun loading() = with(binding) {
         progressBar.root.viewState(true)
+        hideSoftKeyboard(binding.root)
     }
 
     private fun error(message: String?) = with(binding) {
@@ -90,7 +91,11 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
     private fun success() = with(binding) {
         progressBar.root.viewState(false)
-        root.showMessage("A verification mail has been sent to your email address")
-        // TODO: Properly handle verification state
+        showGenericDialog(
+            message = getString(R.string.verificaation_message),
+            negativeButtonText = null,
+            positiveButtonText = getString(R.string.ok),
+            positiveButtonCallback = {}
+        )
     }
 }
