@@ -23,5 +23,6 @@ enum class PromiseStatus(val value: String) {
     COMPLETED(value = "Completed"),
     NOT_STARTED(value = "Not Started"),
     ONGOING(value = "Ongoing"),
-    ABANDONED(value = "Abandoned")
+    ABANDONED(value = "Abandoned"),
+    ALL(value = "All")
 }

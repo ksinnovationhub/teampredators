@@ -53,6 +53,14 @@
     <string name="cancel">Cancel</string>
     <string name="logout_message">Are you sure you want to logout?</string>
     <string name="verificaation_message">A verification mail has been sent to your email address</string>
+    <string name="candidates_promises">Candidate\'s Promises</string>
+    <string name="filter_projects">Filter Projects</string>
+    <string name="completed">Completed</string>
+    <string name="ongoing">Ongoing</string>
+    <string name="not_started">Not Started</string>
+    <string name="abandoned">Abandoned</string>
+    <string name="project_status">Project Status: %s</string>
+    <string name="see_more_on_this_promise">See More on this Promise</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>

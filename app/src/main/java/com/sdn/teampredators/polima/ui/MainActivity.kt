@@ -59,6 +59,10 @@ class MainActivity : AppCompatActivity() {
                     hideBottomNavigation()
                     homeStatusBar()
                 }
+                R.id.allPromisesFragment -> {
+                    hideBottomNavigation()
+                    homeStatusBar()
+                }
                 else -> hideBottomNavigation()
             }
         }
