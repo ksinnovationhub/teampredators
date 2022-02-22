@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.AspirantTaskItemBinding
 
-class AspirantAdapter(val navigation: (AspirantDestinations) -> Unit) :
+class AspirantAdapter :
     ListAdapter<AspirantItem, AspirantAdapter.AspirantTaskViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AspirantTaskViewHolder {
@@ -22,33 +22,17 @@ class AspirantAdapter(val navigation: (AspirantDestinations) -> Unit) :
 
     override fun onBindViewHolder(holder: AspirantTaskViewHolder, position: Int) {
         holder.bind(getItem(position))
-        holder.cardView.setOnClickListener { holder.navigate(position) }
     }
 
     inner class AspirantTaskViewHolder(private val binding: AspirantTaskItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
-        val cardView = binding.taskCard
 
         fun bind(item: AspirantItem) = with(binding) {
             val context = root.context
             taskHeaderText.text = context.getText(item.taskHeader)
             taskContentText.text = context.getText(item.taskContent)
             taskImage.setImageResource(item.taskImage)
-        }
-
-        fun navigate(position: Int) {
-            when (position) {
-                0 -> {
-                    navigation.invoke(AspirantDestinations.Vote)
-                }
-                1 -> {
-                    navigation.invoke(AspirantDestinations.Verify)
-                }
-                2 -> {
-                    navigation.invoke(AspirantDestinations.Profile)
-                }
-            }
+            taskCard.setOnClickListener { item.onClick.invoke() }
         }
     }
 
@@ -69,10 +53,4 @@ class AspirantAdapter(val navigation: (AspirantDestinations) -> Unit) :
             }
         }
     }
-}
-
-sealed class AspirantDestinations {
-    object Vote : AspirantDestinations()
-    object Verify : AspirantDestinations()
-    object Profile : AspirantDestinations()
 }

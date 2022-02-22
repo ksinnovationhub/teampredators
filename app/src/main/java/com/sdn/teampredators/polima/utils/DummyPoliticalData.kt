@@ -2,6 +2,7 @@ package com.sdn.teampredators.polima.utils
 
 import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.ui.home.model.Promise
+import com.sdn.teampredators.polima.ui.home.model.PromiseStatus
 import java.util.*
 import kotlin.random.Random
 
@@ -50,12 +51,22 @@ object DummyPoliticalData {
         "https://upload.wikimedia.org/wikipedia/commons/5/51/Muhammadu_Buhari%2C_President_of_the_Federal_Republic_of_Nigeria_%28cropped3%29.jpg",
         "https://images.unsplash.com/photo-1533108344127-a586d2b02479?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bmlnZXJpYW4lMjBtYW58ZW58MHx8MHx8&w=1000&q=80",
         "https://c.files.bbci.co.uk/assets/ca4dbacb-12b5-46f7-aa88-b52be8cfe8e6",
-        "https://dailyblastng.com/wp-content/uploads/2021/03/man.png",
+        "https://nigerianinfopedia.com.ng/wp-content/uploads/2020/03/Ayo-Fayose-powerful-politician.jpg",
         "https://nigerianfinder.com/wp-content/uploads/2017/12/tony-elumelu-net-worth.png",
         "https://media.kanyidaily.com/2020/12/11151604/Femi-Adesina.jpeg",
         "https://www.currentschoolnews.com/wp-content/uploads/2020/03/Rochas-Okorocha.jpg",
         "https://guardian.ng/wp-content/uploads/2021/07/Umahi-1-1062x598.jpg",
         "https://www.informationng.com/wp-content/uploads/2017/10/saidu-600x583.jpg"
+    )
+
+    private val projectUrls = listOf(
+        "https://prod-001.s3.amazonaws.com/media/articleImages/Roads.jpg",
+        "https://storage.googleapis.com/thisday-846548948316-wp-data/wp-media/2019/11/a8f395bf-ferma.jpg",
+        "http://followthemoneyng.org/wp-content/uploads/2018/01/image8.jpg",
+        "https://mawafd.org/wp-content/uploads/2021/01/Screenshot_20210118-151812.png",
+        "https://guardian.ng/wp-content/uploads/2016/06/hospital-640x360.jpg",
+        "https://www.vanguardngr.com/wp-content/uploads/2018/04/Test-WATER.jpg",
+        "https://nigeriahealthwatch.com/wp-content/uploads/2021/03/Hand-Pump-Borehole-in-PHC-Ushafa-Bwari-Area-Council-scaled.jpg"
     )
 
     private fun getImageUrl(): String {
@@ -99,8 +110,18 @@ object DummyPoliticalData {
         "Provide affordable healthcare" to "Provide free and accessible health care for the entire people of Rivers state"
     )
 
+    private fun getRandomStatus(): String {
+        val statuses = listOf(
+            PromiseStatus.ABANDONED,
+            PromiseStatus.COMPLETED,
+            PromiseStatus.ONGOING,
+            PromiseStatus.NOT_STARTED
+        )
+        return statuses.random().value
+    }
+
     private fun getPromise(): Pair<String, String> {
-        return promises[Random.nextInt(promises.size)]
+        return promises.random()
     }
 
     private fun getPromises(): List<Promise> {
@@ -111,7 +132,9 @@ object DummyPoliticalData {
                 Promise(
                     id = generateId(0..5),
                     promise = promise.first,
-                    promiseDescription = promise.second
+                    promiseDescription = promise.second,
+                    status = getRandomStatus(),
+                    promiseImages = mutableListOf(projectUrls.random())
                 )
             )
         }

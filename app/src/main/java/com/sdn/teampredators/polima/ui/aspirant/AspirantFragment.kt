@@ -18,19 +18,13 @@ import kotlinx.coroutines.delay
 class AspirantFragment : Fragment(R.layout.fragment_aspirant) {
 
     private val binding by viewBinding(FragmentAspirantBinding::bind)
-    private val viewModel by viewModels<AspirantViewModel>()
     private val args by navArgs<AspirantFragmentArgs>()
+    private val viewModel by viewModels<AspirantViewModel> {
+        AspirantViewModelFactory(args.politicianItem)
+    }
 
     private val adapter: AspirantAdapter =
-        AspirantAdapter(
-            navigation = { destination ->
-                when (destination) {
-                    is AspirantDestinations.Vote -> viewModel.toVotePromises(args.politicianItem)
-                    is AspirantDestinations.Verify -> viewModel.toVerifyPromises(args.politicianItem)
-                    is AspirantDestinations.Profile -> viewModel.toAspirantProfile(args.politicianItem)
-                }
-            }
-        )
+        AspirantAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
