@@ -27,8 +27,10 @@
     <string name="profile">Profile</string>
     <string name="user_profile">User Profile</string>
     <string name="vote">Vote on fulfilled promises</string>
-    <string name="check">Check for verified fulfilled promises</string>
-    <string name="view">View Candidate or Aspirant profile</string>
+    <string name="check">Check for verified fulfilled Promises</string>
+    <string name="view">View Candidate\'s or Aspirant\'s Profile</string>
+    <string name="view_scorecard">View Candidate\'s Scorecard</string>
+    <string name="view_promises">View Candidate\'s Promises</string>
     <string name="search_bar_hint">Search for your preferred politician</string>
     <string name="biography">Biography</string>
     <string name="education">Education</string>
@@ -39,7 +41,9 @@
     <string name="sign_up_description">Sign up to get access to view and vote on promises made by Politicians</string>
     <string name="vote_description">Vote on the promises verified if it\'s been fulfilled or abandoned. This helps in maintaining accountability in the system. \nBe a part in making your voice count</string>
     <string name="candidate_bio_description">View information and biography of politicians and their political history.</string>
-    <string name="check_verified_promises_description">Find out how many users have voted and the promises that have been fulfilled or not fulfilled</string>
+    <string name="check_verified_promises_description">Find out how many users have voted and the promises that have been fulfilled or not fulfilled.</string>
+    <string name="score_card_description">Find out how well politician has performed over the past years while in office.</string>
+    <string name="promises_description">View, rate and comment on promises made by politician.</string>
     <string name="politician_note_found">Politician Note Found!</string>
     <string name="nin">NIN</string>
     <string name="email">Email</string>
