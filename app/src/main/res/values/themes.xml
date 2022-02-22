@@ -54,7 +54,7 @@
         <item name="android:textAllCaps">false</item>
         <item name="lineHeight">38dp</item>
     </style>
-    
+
     <style name="TextAppearance.AppCompat.Body1.OtherText">
         <item name="fontFamily">@font/muli</item>
         <item name="android:textSize">16sp</item>
@@ -112,5 +112,13 @@
 
     <style name="TextAppearance.AppCompat.Display1.TitleText.itemDisplay1.itemDisplay2">
         <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="checkedIcon">@drawable/ic_done</item>
+        <item name="chipStrokeColor">@color/polima_green</item>
+        <item name="chipStrokeWidth">1dp</item>
     </style>
 </resources>

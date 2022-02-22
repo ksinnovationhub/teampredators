@@ -15,4 +15,5 @@
     <color name="polima_dark_red">#E31D1D</color>
     <color name="notification_color">#289E47</color>
     <color name="stroke_color">#CCCCCC</color>
+    <color name="project_description_color">#333D32</color>
 </resources>

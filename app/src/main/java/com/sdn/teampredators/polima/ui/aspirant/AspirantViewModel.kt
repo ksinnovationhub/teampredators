@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.sdn.teampredators.polima.R
+import com.sdn.teampredators.polima.ui.aspirant.all_promises.AllPromisesViewModel
 import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.SingleLiveEvent
@@ -35,7 +36,7 @@ class AspirantViewModel(private val promises: Politician) : ViewModel() {
                 onClick = {
                     _action.value =
                         GenericActions.Navigate(
-                            AspirantFragmentDirections.toVerifyFragment(promises)
+                            AspirantFragmentDirections.toAllPromisesFragment(promises)
                         )
                 }
             ),
@@ -63,10 +64,16 @@ sealed class AspirantState {
 @Suppress("UNCHECKED_CAST")
 class AspirantViewModelFactory(private val promises: Politician) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return if (modelClass.isAssignableFrom(AspirantViewModel::class.java)) {
-            AspirantViewModel(promises) as T
-        } else {
-            throw IllegalStateException("Class ${modelClass.canonicalName} cannot be found")
+        return when {
+            modelClass.isAssignableFrom(AspirantViewModel::class.java) -> {
+                AspirantViewModel(promises) as T
+            }
+            modelClass.isAssignableFrom(AllPromisesViewModel::class.java) -> {
+                AllPromisesViewModel(promises) as T
+            }
+            else -> {
+                throw IllegalArgumentException("Class ${modelClass.canonicalName} cannot be found")
+            }
         }
     }
 }
