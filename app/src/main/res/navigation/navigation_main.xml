@@ -150,5 +150,27 @@
         <argument
             android:name="politicianItem"
             app:argType="com.sdn.teampredators.polima.ui.home.model.Politician" />
+        <action
+            android:id="@+id/toPromiseDetailsFragment"
+            app:destination="@id/promiseDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/promiseDetailsFragment"
+        android:name="com.sdn.teampredators.polima.ui.aspirant.promise_details.PromiseDetailsFragment"
+        android:label="fragment_promise_details"
+        tools:layout="@layout/fragment_promise_details" >
+        <argument
+            android:name="promise"
+            app:argType="com.sdn.teampredators.polima.ui.home.model.Promise" />
+        <argument
+            android:name="politicianName"
+            app:argType="string" />
+        <argument
+            android:name="politicianImage"
+            app:argType="string" />
     </fragment>
 </navigation>

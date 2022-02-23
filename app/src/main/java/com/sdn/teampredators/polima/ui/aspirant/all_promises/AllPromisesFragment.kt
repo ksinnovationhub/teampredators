@@ -2,6 +2,7 @@ package com.sdn.teampredators.polima.ui.aspirant.all_promises
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -12,6 +13,7 @@ import com.sdn.teampredators.polima.databinding.FragmentAllPromisesBinding
 import com.sdn.teampredators.polima.ui.aspirant.AspirantViewModelFactory
 import com.sdn.teampredators.polima.ui.home.model.Promise
 import com.sdn.teampredators.polima.ui.home.model.PromiseStatus
+import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.viewBinding
 
 class AllPromisesFragment : Fragment(R.layout.fragment_all_promises) {
@@ -21,7 +23,9 @@ class AllPromisesFragment : Fragment(R.layout.fragment_all_promises) {
     private val viewModel by viewModels<AllPromisesViewModel> {
         AspirantViewModelFactory(args.politicianItem)
     }
-    private val projectAdapter: AllPromisesAdapter = AllPromisesAdapter {  }
+    private val projectAdapter: AllPromisesAdapter = AllPromisesAdapter {
+        viewModel.toPromiseDetails(it)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,8 +36,14 @@ class AllPromisesFragment : Fragment(R.layout.fragment_all_promises) {
         setupClickListeners()
     }
 
-    private fun setupToolbar() {
-        binding.toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+    private fun setupToolbar() = with(binding) {
+        toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+        toolbar.setOnMenuItemClickListener {
+            if (it.itemId == R.id.action_filter) {
+                filterGroup.isVisible = filterGroup.isVisible.not()
+            }
+            true
+        }
     }
 
     private fun setupAdapter() = with(binding) {
@@ -45,6 +55,11 @@ class AllPromisesFragment : Fragment(R.layout.fragment_all_promises) {
         viewModel.uiState.observe(viewLifecycleOwner) {
             when (it) {
                 is AllPromisesState.Content -> handleContent(it.promises)
+            }
+        }
+        viewModel.action.observe(viewLifecycleOwner) {
+            when (it) {
+                is GenericActions.Navigate -> findNavController().navigate(it.destination)
             }
         }
     }
