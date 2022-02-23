@@ -10,17 +10,21 @@
         <entry key="app/src/main/res/drawable/background_image_1.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/background_tab_indicator_not_selected.xml" value="0.1115" />
         <entry key="app/src/main/res/drawable/background_tab_indicator_selected.xml" value="0.1115" />
+        <entry key="app/src/main/res/drawable/bg_comment_box.xml" value="0.1345" />
         <entry key="app/src/main/res/drawable/bg_et.xml" value="0.1605" />
         <entry key="app/src/main/res/drawable/bg_main.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/bg_main_revers.xml" value="0.1345" />
+        <entry key="app/src/main/res/drawable/bg_main_reverse.xml" value="0.1345" />
         <entry key="app/src/main/res/drawable/bg_pager_indicator.xml" value="0.1115" />
         <entry key="app/src/main/res/drawable/bg_pager_indicator_selected.xml" value="0.1115" />
         <entry key="app/src/main/res/drawable/bg_pager_indicator_unselected.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/bg_search_bar.xml" value="0.1345" />
         <entry key="app/src/main/res/drawable/bg_sub.xml" value="0.1605" />
         <entry key="app/src/main/res/drawable/ic_app_logo.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_app_name.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/ic_arrow_right.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_done.xml" value="0.1345" />
+        <entry key="app/src/main/res/drawable/ic_send.xml" value="0.194" />
         <entry key="app/src/main/res/drawable/il_onboarding_1.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/il_onboarding_2.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/il_onboarding_3.xml" value="0.1785" />
@@ -38,6 +42,7 @@
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_promise_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.25384615384615383" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_user_profile.xml" value="0.33" />
@@ -51,6 +56,7 @@
         <entry key="app/src/main/res/layout/verify_item.xml" value="0.33" />
         <entry key="app/src/main/res/layout/vote_item.xml" value="0.22" />
         <entry key="app/src/main/res/menu/bottom_nav_item.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/filter_menu.xml" value="0.20833333333333334" />
       </map>
     </option>
   </component>

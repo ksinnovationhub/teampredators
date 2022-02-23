@@ -15,16 +15,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:navigationIcon="@drawable/ic_arrow_back">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/candidates_promises"
-            android:textAppearance="@style/SubHeader"
-            android:textSize="20sp" />
-    </com.google.android.material.appbar.MaterialToolbar>
+        app:menu="@menu/filter_menu"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/candidates_promises" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
@@ -37,7 +30,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
 
             <TextView
                 android:id="@+id/filter_description"
@@ -90,6 +84,14 @@
                     android:layout_height="wrap_content"
                     android:text="@string/abandoned" />
             </com.google.android.material.chip.ChipGroup>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/filter_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="filter_description, chip_group"
+                tools:visibility="visible" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/project_recycler_view"

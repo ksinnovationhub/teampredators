@@ -61,6 +61,9 @@
     <string name="abandoned">Abandoned</string>
     <string name="project_status">Project Status: %s</string>
     <string name="see_more_on_this_promise">See More on this Promise</string>
+    <string name="tell_others_what_you_think">Tell others what you think about this project</string>
+    <string name="type_in_your_comment">Type in your comment</string>
+    <string name="send_action">Send action</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>

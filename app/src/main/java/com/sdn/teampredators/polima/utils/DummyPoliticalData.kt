@@ -62,7 +62,6 @@ object DummyPoliticalData {
     private val projectUrls = listOf(
         "https://prod-001.s3.amazonaws.com/media/articleImages/Roads.jpg",
         "https://storage.googleapis.com/thisday-846548948316-wp-data/wp-media/2019/11/a8f395bf-ferma.jpg",
-        "http://followthemoneyng.org/wp-content/uploads/2018/01/image8.jpg",
         "https://mawafd.org/wp-content/uploads/2021/01/Screenshot_20210118-151812.png",
         "https://guardian.ng/wp-content/uploads/2016/06/hospital-640x360.jpg",
         "https://www.vanguardngr.com/wp-content/uploads/2018/04/Test-WATER.jpg",
