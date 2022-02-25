@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sdn.teampredators.polima.R
-import com.sdn.teampredators.polima.databinding.AspirantItemLayoutBinding
+import com.sdn.teampredators.polima.databinding.ItemAspirantLayoutBinding
 import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.utils.load
 
@@ -16,8 +16,8 @@ class PolimaPoliticianAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PolimaPoliticianViewHolder {
         return PolimaPoliticianViewHolder(
-            AspirantItemLayoutBinding.bind(
-                LayoutInflater.from(parent.context).inflate(R.layout.aspirant_item_layout, parent, false)
+            ItemAspirantLayoutBinding.bind(
+                LayoutInflater.from(parent.context).inflate(R.layout.item_aspirant_layout, parent, false)
             )
         )
     }
@@ -26,7 +26,7 @@ class PolimaPoliticianAdapter(
         holder.bind(getItem(position))
     }
 
-    inner class PolimaPoliticianViewHolder(private val binding: AspirantItemLayoutBinding) :
+    inner class PolimaPoliticianViewHolder(private val binding: ItemAspirantLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Politician) = with(binding) {
@@ -58,4 +58,3 @@ class PolimaPoliticianAdapter(
         }
     }
 }
-

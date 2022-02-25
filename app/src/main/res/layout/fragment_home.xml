@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/include"
-        tools:listitem="@layout/aspirant_item_layout" />
+        tools:listitem="@layout/item_aspirant_layout" />
 
     <TextView
         android:id="@+id/not_found_text"

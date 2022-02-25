@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/small_margin"
+    android:layout_marginVertical="@dimen/small_margin"
+    app:cardBackgroundColor="@color/gray"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/profile_photo_container"
+            android:layout_width="52dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:layout_marginTop="@dimen/medium_margin"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="@dimen/no_space"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/profile_photo"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:layout_gravity="top|center"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/user_name"
+            style="@style/SubHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:fontFamily="@font/muli_bold"
+            app:layout_constraintStart_toEndOf="@id/profile_photo_container"
+            app:layout_constraintTop_toTopOf="@id/profile_photo_container"
+            tools:text="@tools:sample/full_names" />
+
+        <TextView
+            android:id="@+id/user_comment"
+            style="@style/SubHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/profile_photo_container"
+            app:layout_constraintTop_toBottomOf="@id/user_name"
+            tools:maxLines="9"
+            tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/comment_date"
+            style="@style/SubHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/medium_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/user_name"
+            tools:text="@tools:sample/date/ddmmyy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

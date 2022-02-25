@@ -10,6 +10,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.snackbar.Snackbar
 import com.sdn.teampredators.polima.R
+import com.sdn.teampredators.polima.utils.Constants.DATE_PATTERN
+import java.text.SimpleDateFormat
+import java.util.*
+import timber.log.Timber
 
 infix fun ImageView.load(file: String?) {
     Glide.with(this)
@@ -45,4 +49,14 @@ fun Fragment.hideSoftKeyboard(view: View) {
     val imm: InputMethodManager =
         requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(view.windowToken, 0)
+}
+
+fun Long.formatDate(): String {
+    return try {
+        val sdf = SimpleDateFormat(DATE_PATTERN, Locale.getDefault())
+        sdf.format(this)
+    } catch (t: Throwable) {
+        Timber.e(t)
+        ""
+    }
 }

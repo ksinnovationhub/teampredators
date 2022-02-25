@@ -6,16 +6,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sdn.teampredators.polima.R
-import com.sdn.teampredators.polima.databinding.AspirantTaskItemBinding
+import com.sdn.teampredators.polima.databinding.ItemAspirantTaskBinding
 
 class AspirantAdapter :
     ListAdapter<AspirantItem, AspirantAdapter.AspirantTaskViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AspirantTaskViewHolder {
         return AspirantTaskViewHolder(
-            AspirantTaskItemBinding.bind(
+            ItemAspirantTaskBinding.bind(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.aspirant_task_item, parent, false)
+                    .inflate(R.layout.item_aspirant_task, parent, false)
             )
         )
     }
@@ -24,7 +24,7 @@ class AspirantAdapter :
         holder.bind(getItem(position))
     }
 
-    inner class AspirantTaskViewHolder(private val binding: AspirantTaskItemBinding) :
+    inner class AspirantTaskViewHolder(private val binding: ItemAspirantTaskBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: AspirantItem) = with(binding) {

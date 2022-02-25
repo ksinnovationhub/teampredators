@@ -25,6 +25,7 @@
         <entry key="app/src/main/res/drawable/ic_arrow_right.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/ic_done.xml" value="0.1345" />
         <entry key="app/src/main/res/drawable/ic_send.xml" value="0.194" />
+        <entry key="app/src/main/res/drawable/ic_star.xml" value="0.2315" />
         <entry key="app/src/main/res/drawable/il_onboarding_1.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/il_onboarding_2.xml" value="0.1785" />
         <entry key="app/src/main/res/drawable/il_onboarding_3.xml" value="0.1785" />
@@ -33,8 +34,10 @@
         <entry key="app/src/main/res/drawable/selector_tab_pager.xml" value="0.1115" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/aspirant_item_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/aspirant_profile_item.xml" value="0.21153846153846154" />
         <entry key="app/src/main/res/layout/aspirant_task_item.xml" value="0.2089489235964542" />
         <entry key="app/src/main/res/layout/dialog_show_notification.xml" value="0.2116289012398461" />
+        <entry key="app/src/main/res/layout/drop_down_menu_item.xml" value="0.21153846153846154" />
         <entry key="app/src/main/res/layout/fragment_all_promises.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_aspirant.xml" value="0.2089489235964542" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.2116289012398461" />
@@ -42,12 +45,14 @@
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_onboarding.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_promise_details.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_promise_details.xml" value="0.24444444444444444" />
         <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.25384615384615383" />
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_user_profile.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_verify.xml" value="0.2089489235964542" />
         <entry key="app/src/main/res/layout/fragment_vote.xml" value="0.30954587581093607" />
+        <entry key="app/src/main/res/layout/item_aspirant_layout.xml" value="0.21153846153846154" />
+        <entry key="app/src/main/res/layout/item_comment.xml" value="0.4942602040816326" />
         <entry key="app/src/main/res/layout/item_onboarding.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_projects.xml" value="0.375" />
         <entry key="app/src/main/res/layout/layout_progress_bar.xml" value="0.2578125" />

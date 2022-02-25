@@ -6,16 +6,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sdn.teampredators.polima.R
-import com.sdn.teampredators.polima.databinding.VerifyItemBinding
+import com.sdn.teampredators.polima.databinding.ItemVerifyBinding
 import com.sdn.teampredators.polima.ui.home.model.Promise
 
 class VerifyAdapter: ListAdapter<Promise, VerifyAdapter.VerifyViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerifyViewHolder {
         return VerifyViewHolder(
-            VerifyItemBinding.bind(
+            ItemVerifyBinding.bind(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.verify_item, parent, false)
+                    .inflate(R.layout.item_verify, parent, false)
             )
         )
     }
@@ -24,7 +24,7 @@ class VerifyAdapter: ListAdapter<Promise, VerifyAdapter.VerifyViewHolder>(DIFF_U
         holder.bind(getItem(position))
     }
 
-    inner class VerifyViewHolder(private val binding: VerifyItemBinding) :
+    inner class VerifyViewHolder(private val binding: ItemVerifyBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Promise) = with(binding) {

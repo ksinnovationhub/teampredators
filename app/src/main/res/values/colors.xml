@@ -16,4 +16,5 @@
     <color name="notification_color">#289E47</color>
     <color name="stroke_color">#CCCCCC</color>
     <color name="project_description_color">#333D32</color>
+    <color name="rating_stroke">#99000000</color>
 </resources>

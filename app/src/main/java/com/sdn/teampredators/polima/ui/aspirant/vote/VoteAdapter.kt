@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.sdn.teampredators.polima.R
-import com.sdn.teampredators.polima.databinding.VoteItemBinding
+import com.sdn.teampredators.polima.databinding.ItemVoteBinding
 import com.sdn.teampredators.polima.ui.home.model.Promise
 
 class VoteAdapter(
@@ -16,9 +16,9 @@ class VoteAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VoteViewHolder {
         return VoteViewHolder(
-            VoteItemBinding.bind(
+            ItemVoteBinding.bind(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.vote_item, parent, false)
+                    .inflate(R.layout.item_vote, parent, false)
             )
         )
     }
@@ -27,7 +27,7 @@ class VoteAdapter(
         holder.bind(getItem(position))
     }
 
-    inner class VoteViewHolder(private val binding: VoteItemBinding) :
+    inner class VoteViewHolder(private val binding: ItemVoteBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Promise) = with(binding) {
