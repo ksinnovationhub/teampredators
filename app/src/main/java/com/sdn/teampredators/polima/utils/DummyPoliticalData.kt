@@ -97,7 +97,7 @@ object DummyPoliticalData {
 
     private const val education = "Etiam feugiat lorem non metus. Fusce a quam."
 
-    private fun generateId(range: IntRange): String {
+    fun generateId(range: IntRange): String {
         return UUID.randomUUID().toString().substring(range)
     }
 

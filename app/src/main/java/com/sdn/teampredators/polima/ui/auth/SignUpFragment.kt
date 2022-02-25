@@ -59,7 +59,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     private fun setupDropDownMenus() {
         val adapter = ArrayAdapter(
             requireContext(),
-            R.layout.drop_down_menu_item,
+            R.layout.item_drop_down_menu,
             resources.getStringArray(R.array.gender_array)
         )
         (binding.etGender as? AutoCompleteTextView)?.setAdapter(adapter)
