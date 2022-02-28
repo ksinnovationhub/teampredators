@@ -98,6 +98,12 @@
         <item name="trackThickness">@dimen/progress_track_thickness</item>
     </style>
 
+    <style name="LinearProgressStyle">
+        <item name="trackCornerRadius">@dimen/track_corner_radius</item>
+        <item name="trackThickness">@dimen/track_thickness</item>
+        <item name="trackColor">@color/progress_track_color</item>
+    </style>
+
     <style name="SearchBar">
         <item name="fontFamily">@font/muli</item>
         <item name="android:paddingStart">20dp</item>

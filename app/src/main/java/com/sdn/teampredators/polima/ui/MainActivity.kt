@@ -55,11 +55,7 @@ class MainActivity : AppCompatActivity() {
                     hideBottomNavigation()
                     aspirantStatusBar()
                 }
-                R.id.profileFragment -> {
-                    hideBottomNavigation()
-                    homeStatusBar()
-                }
-                R.id.allPromisesFragment -> {
+                R.id.profileFragment, R.id.allPromisesFragment, R.id.candidateScoreCardFragment -> {
                     hideBottomNavigation()
                     homeStatusBar()
                 }

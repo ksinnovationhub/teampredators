@@ -20,4 +20,6 @@
     <dimen name="image_view_height">240dp</dimen>
     <dimen name="notification_image_size">70dp</dimen>
     <dimen name="profile_image_size">186dp</dimen>
+    <dimen name="track_thickness">18dp</dimen>
+    <dimen name="track_corner_radius">9dp</dimen>
 </resources>

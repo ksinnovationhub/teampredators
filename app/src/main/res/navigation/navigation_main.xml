@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/onBoardingFragment"
         android:name="com.sdn.teampredators.polima.ui.onboarding.OnBoardingFragment"
-        android:label="fragment_onboarding"
         tools:layout="@layout/fragment_onboarding">
         <action
             android:id="@+id/toSignInFragment"
@@ -23,7 +22,6 @@
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.sdn.teampredators.polima.ui.auth.SignInFragment"
-        android:label="SignInFragment"
         tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/to_signUpFragment"
@@ -45,12 +43,10 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.sdn.teampredators.polima.ui.auth.SignUpFragment"
-        android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/home"
         android:name="com.sdn.teampredators.polima.ui.home.HomeFragment"
-        android:label="fragment_home"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/to_aspirantFragment"
@@ -63,7 +59,6 @@
     <fragment
         android:id="@+id/aspirantFragment"
         android:name="com.sdn.teampredators.polima.ui.aspirant.AspirantFragment"
-        android:label="fragment_aspirant"
         tools:layout="@layout/fragment_aspirant">
         <argument
             android:name="politicianItem"
@@ -96,11 +91,17 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/toCandidateScoreCardFragment"
+            app:destination="@id/candidateScoreCardFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/voteFragment"
         android:name="com.sdn.teampredators.polima.ui.aspirant.vote.VoteFragment"
-        android:label="fragment_vote"
         tools:layout="@layout/fragment_vote">
         <argument
             android:name="politicianItem"
@@ -109,7 +110,6 @@
     <fragment
         android:id="@+id/verifyFragment"
         android:name="com.sdn.teampredators.polima.ui.aspirant.verify.VerifyFragment"
-        android:label="fragment_verify"
         tools:layout="@layout/fragment_verify">
         <argument
             android:name="verifiedItem"
@@ -118,7 +118,6 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.sdn.teampredators.polima.ui.aspirant.profile.ProfileFragment"
-        android:label="fragment_profile"
         tools:layout="@layout/fragment_profile">
         <argument
             android:name="profileItem"
@@ -145,7 +144,6 @@
     <fragment
         android:id="@+id/allPromisesFragment"
         android:name="com.sdn.teampredators.polima.ui.aspirant.all_promises.AllPromisesFragment"
-        android:label="fragment_all_promises"
         tools:layout="@layout/fragment_all_promises">
         <argument
             android:name="politicianItem"
@@ -161,8 +159,7 @@
     <fragment
         android:id="@+id/promiseDetailsFragment"
         android:name="com.sdn.teampredators.polima.ui.aspirant.promise_details.PromiseDetailsFragment"
-        android:label="fragment_promise_details"
-        tools:layout="@layout/fragment_promise_details" >
+        tools:layout="@layout/fragment_promise_details">
         <argument
             android:name="politicianId"
             app:argType="string" />
@@ -175,5 +172,13 @@
         <argument
             android:name="promiseId"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/candidateScoreCardFragment"
+        android:name="com.sdn.teampredators.polima.ui.aspirant.scorecard.CandidateScoreCardFragment"
+        tools:layout="@layout/fragment_candidate_score_card" >
+        <argument
+            android:name="politician"
+            app:argType="com.sdn.teampredators.polima.ui.home.model.Politician" />
     </fragment>
 </navigation>
