@@ -66,6 +66,9 @@
     <string name="send_action">Send action</string>
     <string name="rate_this_project">Rate this project</string>
     <string name="rate">Rate</string>
+    <string name="candidate_scorecard">Candidate\'s scorecard</string>
+    <string name="total_number_of_ratings">Total Number of Ratings</string>
+    <string name="overall_rating">Overall Rating</string>
     <string-array name="gender_array">
         <item>Male</item>
         <item>Female</item>

@@ -17,4 +17,5 @@
     <color name="stroke_color">#CCCCCC</color>
     <color name="project_description_color">#333D32</color>
     <color name="rating_stroke">#99000000</color>
+    <color name="progress_track_color">#F1F1F1</color>
 </resources>

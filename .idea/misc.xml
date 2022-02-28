@@ -40,6 +40,7 @@
         <entry key="app/src/main/res/layout/drop_down_menu_item.xml" value="0.21153846153846154" />
         <entry key="app/src/main/res/layout/fragment_all_promises.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_aspirant.xml" value="0.2089489235964542" />
+        <entry key="app/src/main/res/layout/fragment_candidate_score_card.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.2116289012398461" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.165" />

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_main_reverse"
+    tools:context=".ui.aspirant.scorecard.CandidateScoreCardFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/polima_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/candidate_scorecard" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/candidate_profile_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/candidate_image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginVertical="@dimen/small_margin"
+                android:layout_marginStart="@dimen/small_margin"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/candidate_name"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/candidate_position"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/candidate_image"
+                app:layout_constraintTop_toTopOf="@id/candidate_image"
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                tools:text="@tools:sample/full_names" />
+
+            <TextView
+                android:id="@+id/candidate_position"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:ellipsize="end"
+                android:maxLines="2"
+                app:layout_constraintBottom_toTopOf="@id/candidate_party"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/candidate_image"
+                app:layout_constraintTop_toBottomOf="@id/candidate_name"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/candidate_party"
+                style="@style/SubHeader.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:textAllCaps="true"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/candidate_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/candidate_position"
+                tools:text="ADC" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ratings_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/candidate_profile_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/overall_rating_label"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="@string/overall_rating"
+                app:layout_constraintEnd_toEndOf="@id/divider_guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_margin"
+                android:contentDescription="@null"
+                app:layout_constraintBottom_toBottomOf="@id/overall_rating_label"
+                app:layout_constraintEnd_toStartOf="@id/overall_rating"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/divider_guideline"
+                app:layout_constraintTop_toTopOf="@id/overall_rating_label"
+                app:srcCompat="@drawable/ic_star" />
+
+            <TextView
+                android:id="@+id/overall_rating"
+                style="@style/SubHeader.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:text="4.1"
+                app:layout_constraintBottom_toBottomOf="@id/overall_rating_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/star"
+                app:layout_constraintTop_toTopOf="@id/star" />
+
+            <TextView
+                android:id="@+id/number_of_rating_label"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:layout_marginVertical="@dimen/medium_margin"
+                android:text="@string/total_number_of_ratings"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/divider_guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/overall_rating_label" />
+
+            <TextView
+                android:id="@+id/number_of_rating"
+                style="@style/SubHeader.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:text="4,670"
+                app:layout_constraintBottom_toBottomOf="@id/number_of_rating_label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/divider_guideline"
+                app:layout_constraintTop_toTopOf="@id/number_of_rating_label" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/divider_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/statistics_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/ratings_card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/project_statistics_label"
+                style="@style/SubHeader"
+                android:layout_width="@dimen/no_space"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="Project Statistics"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/total_projects_label"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_weight="1"
+                android:text="Total Projects"
+                app:layout_constraintEnd_toStartOf="@id/total_projects"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/project_statistics_label" />
+
+            <TextView
+                android:id="@+id/total_projects"
+                style="@style/SubHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:text="243"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/total_projects_label" />
+
+            <TextView
+                android:id="@+id/completed_label"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="Completed (100)"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/total_projects_label" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/completed_progress"
+                style="@style/LinearProgressStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:progress="46"
+                app:indicatorColor="@color/polima_green"
+                app:layout_constraintEnd_toEndOf="@id/completed_label"
+                app:layout_constraintStart_toStartOf="@id/completed_label"
+                app:layout_constraintTop_toBottomOf="@id/completed_label" />
+
+            <TextView
+                android:id="@+id/ongoing_label"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="Ongoing (43)"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/completed_progress" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/ongoing_progress"
+                style="@style/LinearProgressStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:progress="28"
+                app:indicatorColor="#F1D542"
+                app:layout_constraintEnd_toEndOf="@id/ongoing_label"
+                app:layout_constraintStart_toStartOf="@id/ongoing_label"
+                app:layout_constraintTop_toBottomOf="@id/ongoing_label" />
+
+            <TextView
+                android:id="@+id/not_started_label"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="Not started (60)"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ongoing_progress" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/not_started_progress"
+                style="@style/LinearProgressStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:progress="36"
+                app:indicatorColor="#EA651A"
+                app:layout_constraintEnd_toEndOf="@id/not_started_label"
+                app:layout_constraintStart_toStartOf="@id/not_started_label"
+                app:layout_constraintTop_toBottomOf="@id/not_started_label" />
+
+            <TextView
+                android:id="@+id/abandoned_label"
+                style="@style/SubHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_margin"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="Abandoned (20)"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/not_started_progress" />
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/abandoned_progress"
+                style="@style/LinearProgressStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_margin"
+                android:layout_marginBottom="@dimen/medium_margin"
+                android:progress="10"
+                app:indicatorColor="@color/polima_red"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/abandoned_label"
+                app:layout_constraintStart_toStartOf="@id/abandoned_label"
+                app:layout_constraintTop_toBottomOf="@id/abandoned_label" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/medium_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/medium_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/medium_margin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

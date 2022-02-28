@@ -10,7 +10,7 @@ import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.SingleLiveEvent
 
-class AspirantViewModel(private val promises: Politician) : ViewModel() {
+class AspirantViewModel(private val politician: Politician) : ViewModel() {
 
     private val _uiState = MutableLiveData<AspirantState>()
     val uiState: LiveData<AspirantState> = _uiState
@@ -26,7 +26,11 @@ class AspirantViewModel(private val promises: Politician) : ViewModel() {
                 taskContent = R.string.score_card_description,
                 onClick = {
                     _action.value =
-                        GenericActions.Navigate(AspirantFragmentDirections.toVoteFragment(promises))
+                        GenericActions.Navigate(
+                            AspirantFragmentDirections.toCandidateScoreCardFragment(
+                                politician
+                            )
+                        )
                 }
             ),
             AspirantItem(
@@ -36,7 +40,7 @@ class AspirantViewModel(private val promises: Politician) : ViewModel() {
                 onClick = {
                     _action.value =
                         GenericActions.Navigate(
-                            AspirantFragmentDirections.toAllPromisesFragment(promises)
+                            AspirantFragmentDirections.toAllPromisesFragment(politician)
                         )
                 }
             ),
@@ -47,12 +51,11 @@ class AspirantViewModel(private val promises: Politician) : ViewModel() {
                 onClick = {
                     _action.value =
                         GenericActions.Navigate(
-                            AspirantFragmentDirections.toProfileFragment(promises)
+                            AspirantFragmentDirections.toProfileFragment(politician)
                         )
                 }
             )
         )
-
         _uiState.value = AspirantState.Content(taskContent)
     }
 }
@@ -62,14 +65,14 @@ sealed class AspirantState {
 }
 
 @Suppress("UNCHECKED_CAST")
-class AspirantViewModelFactory(private val promises: Politician) : ViewModelProvider.Factory {
+class AspirantViewModelFactory(private val politician: Politician) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(AspirantViewModel::class.java) -> {
-                AspirantViewModel(promises) as T
+                AspirantViewModel(politician) as T
             }
             modelClass.isAssignableFrom(AllPromisesViewModel::class.java) -> {
-                AllPromisesViewModel(promises) as T
+                AllPromisesViewModel(politician) as T
             }
             else -> {
                 throw IllegalArgumentException("Class ${modelClass.canonicalName} cannot be found")
