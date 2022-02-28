@@ -9,7 +9,7 @@ import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.ItemProjectsBinding
 import com.sdn.teampredators.polima.ui.home.model.Promise
 
-class AllPromisesAdapter(private val onClick: (Promise) -> Unit) :
+class AllPromisesAdapter(private val onClick: (String) -> Unit) :
     ListAdapter<Promise, AllPromisesAdapter.AllPromisesViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllPromisesViewHolder {
@@ -33,8 +33,8 @@ class AllPromisesAdapter(private val onClick: (Promise) -> Unit) :
             projectTitle.text = promise.promise
             projectDescription.text = promise.promiseDescription
             projectStatus.text = root.context.getString(R.string.project_status, promise.status)
-            projectSeeMore.setOnClickListener { onClick.invoke(promise) }
-            root.setOnClickListener { onClick.invoke(promise) }
+            projectSeeMore.setOnClickListener { onClick.invoke(promise.id) }
+            root.setOnClickListener { onClick.invoke(promise.id) }
         }
     }
 

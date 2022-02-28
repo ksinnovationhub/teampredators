@@ -164,13 +164,16 @@
         android:label="fragment_promise_details"
         tools:layout="@layout/fragment_promise_details" >
         <argument
-            android:name="promise"
-            app:argType="com.sdn.teampredators.polima.ui.home.model.Promise" />
+            android:name="politicianId"
+            app:argType="string" />
         <argument
             android:name="politicianName"
             app:argType="string" />
         <argument
             android:name="politicianImage"
+            app:argType="string" />
+        <argument
+            android:name="promiseId"
             app:argType="string" />
     </fragment>
 </navigation>

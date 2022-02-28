@@ -24,8 +24,9 @@ class AllPromisesFragment : Fragment(R.layout.fragment_all_promises) {
         AspirantViewModelFactory(args.politicianItem)
     }
     private val projectAdapter: AllPromisesAdapter = AllPromisesAdapter {
-        viewModel.toPromiseDetails(it)
+        viewModel.toPromiseDetails(promiseId = it)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

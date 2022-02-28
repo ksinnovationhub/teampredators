@@ -9,7 +9,7 @@ import com.sdn.teampredators.polima.ui.home.model.PromiseStatus
 import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.SingleLiveEvent
 
-class AllPromisesViewModel(private val politician: Politician) : ViewModel() {
+class AllPromisesViewModel (private val politician: Politician) : ViewModel() {
 
     private val _uiState = MutableLiveData<AllPromisesState>()
     val uiState: LiveData<AllPromisesState> = _uiState
@@ -34,12 +34,13 @@ class AllPromisesViewModel(private val politician: Politician) : ViewModel() {
         }
     }
 
-    fun toPromiseDetails(promise: Promise) {
+    fun toPromiseDetails(promiseId: String) {
         _action.value = GenericActions.Navigate(
             AllPromisesFragmentDirections.toPromiseDetailsFragment(
-                promise = promise,
                 politicianName = politician.fullName,
-                politicianImage = politician.photoUrl
+                politicianImage = politician.photoUrl,
+                politicianId = politician.id,
+                promiseId = promiseId
             )
         )
     }
