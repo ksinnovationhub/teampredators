@@ -55,9 +55,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/small_margin"
                     android:textColor="@color/polima_green"
                     app:layout_constraintBottom_toBottomOf="@id/politician_image"
-                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintEnd_toStartOf="@id/promise_rating"
                     app:layout_constraintStart_toEndOf="@id/politician_image"
                     app:layout_constraintTop_toTopOf="@id/politician_image"
                     tools:text="@tools:sample/full_names" />
@@ -68,11 +69,56 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/medium_margin"
+                    android:layout_marginEnd="@dimen/small_margin"
                     android:fontFamily="@font/muli_bold"
-                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintEnd_toStartOf="@id/promise_rating"
                     app:layout_constraintStart_toStartOf="@id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@id/politician_image"
                     tools:text="Ban on government officials on going abroad for medical treatment" />
+
+                <TextView
+                    android:id="@+id/promise_rating_text"
+                    style="@style/SubHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toTopOf="@id/promise_rating"
+                    app:layout_constraintEnd_toEndOf="@id/promise_rating"
+                    app:layout_constraintStart_toStartOf="@id/promise_rating"
+                    app:layout_constraintTop_toTopOf="@id/guidelineTop"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="4.0" />
+
+                <RatingBar
+                    android:id="@+id/promise_rating"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:progressTint="@color/polima_green"
+                    android:numStars="5"
+                    app:layout_constraintBottom_toTopOf="@id/total_ratings"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintTop_toBottomOf="@id/promise_rating_text" />
+
+                <TextView
+                    android:id="@+id/total_ratings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/muli"
+                    app:layout_constraintBottom_toTopOf="@id/divider1"
+                    app:layout_constraintEnd_toEndOf="@id/promise_rating"
+                    app:layout_constraintStart_toStartOf="@id/promise_rating"
+                    app:layout_constraintTop_toBottomOf="@id/promise_rating"
+                    tools:text="129" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/promise_rating_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="promise_rating, promise_rating_text, total_ratings"
+                    tools:visibility="visible" />
 
                 <com.google.android.material.divider.MaterialDivider
                     android:id="@+id/divider1"
@@ -88,8 +134,9 @@
                     style="@style/SubHeader"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/medium_margin"
+                    android:layout_marginTop="8dp"
                     app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@id/guidelineStart"
                     app:layout_constraintTop_toBottomOf="@id/divider1"
                     tools:text="President Muhammed Buhari has giving this promise, to Ban all government officials from going abroad for medical treatment" />
@@ -108,7 +155,7 @@
                     <ImageView
                         android:id="@+id/promise_image"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="240dp"
                         android:adjustViewBounds="true"
                         android:contentDescription="@null"
                         android:scaleType="centerCrop"
@@ -150,8 +197,11 @@
                     app:layout_constraintTop_toBottomOf="@id/rate_project_description" />
 
                 <androidx.constraintlayout.widget.Group
+                    android:id="@+id/rating_group"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible"
                     app:constraint_referenced_ids="rate_project_description, rating" />
 
                 <com.google.android.material.button.MaterialButton
@@ -195,7 +245,8 @@
                     android:textAppearance="@style/SubHeader"
                     app:layout_constraintEnd_toStartOf="@id/send_action"
                     app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                    app:layout_constraintTop_toBottomOf="@id/tell_others" />
+                    app:layout_constraintTop_toBottomOf="@id/tell_others"
+                    android:importantForAutofill="no" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/send_action"
@@ -267,5 +318,6 @@
 
     <include
         android:id="@+id/progress_layout"
-        layout="@layout/layout_progress_bar" />
+        layout="@layout/layout_progress_bar"
+        tools:visibility="gone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,13 +9,18 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.auth.FirebaseAuth
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.FragmentPromiseDetailsBinding
+import com.sdn.teampredators.polima.ui.home.model.Promise
+import com.sdn.teampredators.polima.ui.home.model.PromiseStatus
 import com.sdn.teampredators.polima.utils.hideSoftKeyboard
 import com.sdn.teampredators.polima.utils.load
 import com.sdn.teampredators.polima.utils.loadRoundImage
 import com.sdn.teampredators.polima.utils.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+import timber.log.Timber
 
 @AndroidEntryPoint
 class PromiseDetailsFragment : Fragment(R.layout.fragment_promise_details) {
@@ -26,33 +31,54 @@ class PromiseDetailsFragment : Fragment(R.layout.fragment_promise_details) {
     private val viewModel by viewModels<PromiseDetailsViewModel>()
     private val commentsAdapter by lazy { CommentsAdapter() }
 
+    @Inject
+    lateinit var firebaseAuth: FirebaseAuth
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupToolbar()
-        setupUi()
         setupClickListeners()
         setupObservers()
-        viewModel.setPromiseId(args.promise.id)
+
+        viewModel.setData(
+            politicianId = args.politicianId,
+            promiseId = args.promiseId
+        )
         viewModel.getCurrentUserId()
     }
 
-    private fun setupUi() = with(binding) {
+    private fun setupUi(promises: List<Promise>) = with(binding) {
         politicianName.text = args.politicianName
         politicianImage loadRoundImage args.politicianImage
         commentRecyclerView.adapter = commentsAdapter
-
-        val promise = args.promise
-        promiseTitle.text = promise.promise
-        promiseDescription.text = promise.promiseDescription
-        promiseImage load promise.promiseImages.firstOrNull()
-    }
-
-    private fun setupToolbar() {
-        binding.toolbar.apply {
-            title = args.promise.promise
+        val tempPromise = promises.find {
+            it.id == args.promiseId
+        }
+        val position = promises.indexOf(tempPromise)
+        // Setup Toolbar
+        toolbar.apply {
+            title = promises[position].promise
             setNavigationOnClickListener { findNavController().navigateUp() }
         }
+
+        val promise = promises[position]
+        promiseTitle.text = promise.promise
+
+        if (promise.status.equals(PromiseStatus.COMPLETED.value, ignoreCase = true)) {
+            ratingGroup.isVisible = true
+            promiseRatingGroup.isVisible = true
+            if (promise.userIds.contains(firebaseAuth.uid)) {
+                ratingGroup.isGone = true
+                Timber.d("${promise.userIds}")
+                Timber.d("${firebaseAuth.uid}")
+            }
+        }
+
+        promiseRatingText.text = promise.averageRating.toString().take(3)
+        promiseRating.rating = promise.averageRating
+        totalRatings.text = promise.totalNumberOfRating.toString()
+        promiseDescription.text = promise.promiseDescription
+        promiseImage load promise.promiseImages.firstOrNull()
     }
 
     private fun setupClickListeners() = with(binding) {
@@ -60,21 +86,21 @@ class PromiseDetailsFragment : Fragment(R.layout.fragment_promise_details) {
             rateAction.isVisible = rating > 0
         }
         rateAction.setOnClickListener {
-            // TODO: Rate project
-            rating.rating
+            viewModel.rateProject(rating.rating.toInt())
         }
         commentBox.addTextChangedListener {
             sendAction.isEnabled = it.isNullOrBlank().not()
         }
         sendAction.setOnClickListener {
-            viewModel.addComment(comment = commentBox.text.toString())
+            viewModel.addComment(comment = commentBox.text.toString().trim())
         }
     }
 
     private fun setupObservers() {
         viewModel.uiState.observe(viewLifecycleOwner) {
             when (it) {
-                is PromiseDetailsState.GetCommentsSuccess -> with(binding) {
+                is PromiseDetailsState.LoadUiContentsSuccess -> with(binding) {
+                    setupUi(it.promises)
                     commentsAdapter.submitList(it.comments)
                     progressBar.isGone = true
                     progressLayout.root.isGone = true
@@ -84,26 +110,21 @@ class PromiseDetailsFragment : Fragment(R.layout.fragment_promise_details) {
                 }
                 is PromiseDetailsState.Error -> {
                     binding.progressLayout.root.isGone = true
-                }
-                PromiseDetailsState.GetUserSuccess -> {
-                    binding.progressLayout.root.isGone = true
-                }
-                PromiseDetailsState.GetUserLoading -> {
-                    binding.progressLayout.root.isVisible = true
-                    hideSoftKeyboard(binding.root)
-                }
-                PromiseDetailsState.GetCommentsLoading -> {
-                    binding.progressBar.isVisible = true
-                    hideSoftKeyboard(binding.root)
-                }
-                PromiseDetailsState.AddCommentsSuccess -> {
-                    binding.commentBox.isEnabled = true
-                    binding.sendAction.isEnabled = true
+                    binding.rating.isEnabled = true
+                    binding.rateAction.isEnabled = true
                 }
                 PromiseDetailsState.AddCommentsLoading -> {
                     binding.commentBox.isEnabled = false
                     binding.sendAction.isEnabled = false
                     hideSoftKeyboard(binding.root)
+                }
+                PromiseDetailsState.RatePromiseLoading -> {
+                    binding.rating.isEnabled = false
+                    binding.rateAction.isEnabled = false
+                    hideSoftKeyboard(binding.root)
+                }
+                PromiseDetailsState.LoadUiContentsLoading -> {
+                    binding.progressLayout.root.isVisible = true
                 }
             }
         }
