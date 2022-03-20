@@ -9,7 +9,7 @@ import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.ItemVerifyBinding
 import com.sdn.teampredators.polima.ui.home.model.Promise
 
-class VerifyAdapter: ListAdapter<Promise, VerifyAdapter.VerifyViewHolder>(DIFF_UTIL) {
+class VerifyAdapter : ListAdapter<Promise, VerifyAdapter.VerifyViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerifyViewHolder {
         return VerifyViewHolder(
@@ -28,7 +28,7 @@ class VerifyAdapter: ListAdapter<Promise, VerifyAdapter.VerifyViewHolder>(DIFF_U
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Promise) = with(binding) {
-            verifyHeaderText.text= item.promise
+            verifyHeaderText.text = item.promise
             verifyPromisesText.text = item.promiseDescription
             verifyVoteNumbersUp.text = item.upVoteCount.toString()
             verifyVoteNumbersDown.text = item.downVoteCount.toString()

@@ -1,13 +1,12 @@
 package com.sdn.teampredators.polima.ui.aspirant.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.FragmentProfileBinding
-import com.sdn.teampredators.polima.utils.load
 import com.sdn.teampredators.polima.utils.loadRoundImage
 import com.sdn.teampredators.polima.utils.viewBinding
 import com.sdn.teampredators.polima.utils.viewState

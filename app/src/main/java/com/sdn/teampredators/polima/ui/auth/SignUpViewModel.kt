@@ -8,11 +8,11 @@ import com.sdn.teampredators.polima.ui.auth.model.User
 import com.sdn.teampredators.polima.utils.AuthenticationState
 import com.sdn.teampredators.polima.utils.Constants.USERS_COLLECTION
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
-import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.tasks.await
 import timber.log.Timber
 

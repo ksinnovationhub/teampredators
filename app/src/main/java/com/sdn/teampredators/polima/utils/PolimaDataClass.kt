@@ -2,7 +2,6 @@ package com.sdn.teampredators.polima.utils
 
 import androidx.navigation.NavDirections
 
-
 sealed class DataResult<out T> {
     data class Success<T>(val data: T?) : DataResult<T>()
     data class Error(val error: Throwable?) : DataResult<Nothing>()
@@ -24,4 +23,3 @@ sealed class AuthenticationState {
 sealed class GenericActions {
     data class Navigate(val destination: NavDirections) : GenericActions()
 }
-

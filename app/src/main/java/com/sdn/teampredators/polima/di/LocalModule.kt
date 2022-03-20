@@ -17,5 +17,4 @@ class LocalModule {
     fun provideSharedPreference(@ApplicationContext context: Context): SharedPreferences {
         return context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)
     }
-
 }

@@ -3,7 +3,7 @@ package com.sdn.teampredators.polima.utils
 import com.sdn.teampredators.polima.ui.home.model.Politician
 import com.sdn.teampredators.polima.ui.home.model.Promise
 import com.sdn.teampredators.polima.ui.home.model.PromiseStatus
-import java.util.*
+import java.util.UUID
 import kotlin.random.Random
 
 object DummyPoliticalData {

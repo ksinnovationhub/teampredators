@@ -6,7 +6,7 @@ import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 @HiltAndroidApp
-class PolimaApplication: Application() {
+class PolimaApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         if (BuildConfig.DEBUG)

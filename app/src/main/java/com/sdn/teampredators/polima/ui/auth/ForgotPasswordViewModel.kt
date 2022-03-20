@@ -22,9 +22,7 @@ class ForgotPasswordViewModel @Inject constructor(private val auth: FirebaseAuth
             kotlin.runCatching {
                 auth.sendPasswordResetEmail(email).await()
             }.onSuccess {
-
             }.onFailure {
-
             }
         }
     }

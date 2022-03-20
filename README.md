@@ -51,13 +51,13 @@ Polima is an android app that seeks to bring about accountability in promises ma
 The UI designs for this project is hosted on Figma and can be found [here](https://www.figma.com/file/MB3zhmtleghzkgaVDwA5AB/Polima-designs?node-id=0%3A1)
 
 ### Found a bug? 🐛
-If you found a bug, you can report it by creating an issue [here](). Endeavour to follow the guidelines for reporting a bug.
+If you found a bug, you can report it by creating an issue [here](https://github.com/ksinnovationhub/teampredators/issues). Endeavour to follow the guidelines for reporting a bug.
 
 ### Want a new feature? 🆕
-If you want to request for a new feature, you can create an issue [here](). Endeavour to follow the guidelines for requesting a new feature.
+If you want to request for a new feature, you can create an issue [here](https://github.com/ksinnovationhub/teampredators/issues). Endeavour to follow the guidelines for requesting a new feature.
 
 ### Want to contribute to this project? 🤓
-If you want to contribute to this project, kindly go through the [contribution guideline]() for a step-by-step instruction on how to contribute to this project.
+If you want to contribute to this project, kindly go through the [contribution guideline](https://github.com/ksinnovationhub/teampredators/blob/open_source_guideline/CONTRIBUTING.md) for a step-by-step instruction on how to contribute to this project.
 
 ### Project Maintainers 👷‍♂️
 * [Segun Francis](https://github.com/segunfrancis)

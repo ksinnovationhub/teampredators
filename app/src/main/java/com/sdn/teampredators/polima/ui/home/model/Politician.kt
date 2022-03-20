@@ -15,7 +15,7 @@ data class Politician(
     val politicalAspirations: String,
     val education: String,
     val promises: List<Promise>
-): Parcelable {
+) : Parcelable {
     constructor() : this(
         id = "",
         fullName = "",

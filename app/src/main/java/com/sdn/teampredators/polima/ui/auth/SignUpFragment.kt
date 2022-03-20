@@ -1,15 +1,21 @@
 package com.sdn.teampredators.polima.ui.auth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.FragmentSignUpBinding
-import com.sdn.teampredators.polima.utils.*
+import com.sdn.teampredators.polima.utils.AuthenticationState
+import com.sdn.teampredators.polima.utils.GenericTextWatcherSignUp
+import com.sdn.teampredators.polima.utils.hideSoftKeyboard
+import com.sdn.teampredators.polima.utils.showGenericDialog
+import com.sdn.teampredators.polima.utils.showMessage
+import com.sdn.teampredators.polima.utils.viewBinding
+import com.sdn.teampredators.polima.utils.viewState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
