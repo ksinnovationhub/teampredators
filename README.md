@@ -8,7 +8,7 @@ Polima is an android app that seeks to bring about accountability in promises ma
 * There is an increased  need for transparency, accountability and open governance in governing.
 
 ### Why Polima?
-* It improves the Economics of the state.
+* It improves the Economics of the state
 * It improves the livelihood of the citizens of the state
 * It improves the overall outlook of the state
 
@@ -39,7 +39,7 @@ Polima is an android app that seeks to bring about accountability in promises ma
 
 ### Screenshots 📸
 
-### UI Designs
+### UI Designs 🧑🏽‍💻
 The UI designs for this project is hosted on Figma and can be found [here](https://www.figma.com/file/MB3zhmtleghzkgaVDwA5AB/Polima-designs?node-id=0%3A1)
 
 ### Found a bug? 🐛
