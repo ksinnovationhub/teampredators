@@ -38,6 +38,14 @@ Polima is an android app that seeks to bring about accountability in promises ma
 * Create a new account and you are all set
 
 ### Screenshots 📸
+<ul>
+  <img src="https://github.com/ksinnovationhub/teampredators/blob/open_source_guideline/screenshots/iPhone%2013%20Pro.png" width="40%" alt="Screen3" hspace="15">
+  <img src="https://github.com/ksinnovationhub/teampredators/blob/open_source_guideline/screenshots/iPhone-13-Pro-Front-10.png" width="40%" alt="Screen1" hspace="15">
+  <img src="https://github.com/ksinnovationhub/teampredators/blob/open_source_guideline/screenshots/iPhone-13-Pro-Front-5.png" width="40%" alt="Screen2" hspace="15">
+  <img src="https://github.com/ksinnovationhub/teampredators/blob/open_source_guideline/screenshots/iPhone-13-Pro-Front-7.png" alt="Screenshot" width="40%" hspace="15"/>
+  <img src="https://github.com/ksinnovationhub/teampredators/blob/open_source_guideline/screenshots/iPhone-13-Pro-Front-8.png" width="40%" alt="Screen2" hspace="15">
+  <img src="https://github.com/ksinnovationhub/teampredators/blob/open_source_guideline/screenshots/iPhone-13-Pro-Front-9.png" width="40%" alt="Screen2" hspace="15">
+</ul>
 
 ### UI Designs 🧑🏽‍💻
 The UI designs for this project is hosted on Figma and can be found [here](https://www.figma.com/file/MB3zhmtleghzkgaVDwA5AB/Polima-designs?node-id=0%3A1)
