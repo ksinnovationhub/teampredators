@@ -12,7 +12,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.utils.Constants.DATE_PATTERN
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 import timber.log.Timber
 
 infix fun ImageView.load(file: String?) {
@@ -35,7 +35,6 @@ private fun requestManger() =
         .placeholder(R.drawable.ic_launcher_background)
         .error(R.drawable.ic_error_image)
         .centerCrop()
-
 
 fun View.viewState(state: Boolean) {
     this.isVisible = state

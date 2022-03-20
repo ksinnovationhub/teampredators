@@ -9,7 +9,11 @@ import androidx.navigation.fragment.findNavController
 import com.sdn.teampredators.polima.R
 import com.sdn.teampredators.polima.databinding.FragmentHomeBinding
 import com.sdn.teampredators.polima.ui.home.model.Politician
-import com.sdn.teampredators.polima.utils.*
+import com.sdn.teampredators.polima.utils.GenericActions
+import com.sdn.teampredators.polima.utils.hideSoftKeyboard
+import com.sdn.teampredators.polima.utils.showMessage
+import com.sdn.teampredators.polima.utils.viewBinding
+import com.sdn.teampredators.polima.utils.viewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

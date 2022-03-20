@@ -9,7 +9,7 @@ import com.sdn.teampredators.polima.ui.home.model.PromiseStatus
 import com.sdn.teampredators.polima.utils.GenericActions
 import com.sdn.teampredators.polima.utils.SingleLiveEvent
 
-class AllPromisesViewModel (private val politician: Politician) : ViewModel() {
+class AllPromisesViewModel(private val politician: Politician) : ViewModel() {
 
     private val _uiState = MutableLiveData<AllPromisesState>()
     val uiState: LiveData<AllPromisesState> = _uiState

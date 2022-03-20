@@ -27,7 +27,6 @@ class AllPromisesFragment : Fragment(R.layout.fragment_all_promises) {
         viewModel.toPromiseDetails(promiseId = it)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

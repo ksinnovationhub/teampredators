@@ -35,7 +35,7 @@ class HomeViewModel @Inject constructor(private val db: FirebaseFirestore) : Vie
 
     init {
         repeat(30) {
-            //setData() // todo: uncomment to populate the database with random data
+            // setData() // todo: uncomment to populate the database with random data
         }
         getData()
     }

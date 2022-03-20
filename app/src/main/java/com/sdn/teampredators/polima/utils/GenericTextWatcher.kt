@@ -67,7 +67,7 @@ class GenericTextWatcherSignUp internal constructor(
     private val currentView: TextInputEditText?,
     private val currentView2: AutoCompleteTextView?,
     private val binding: FragmentSignUpBinding
-): TextWatcher{
+) : TextWatcher {
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
     override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
@@ -76,14 +76,14 @@ class GenericTextWatcherSignUp internal constructor(
         val text = p0.toString()
         val emailPattern =
             "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
-        when(currentView?.id){
+        when (currentView?.id) {
             R.id.et_full_name -> {
-                when{
+                when {
                     text.isEmpty() -> {
                         tiFullName.error = "Please Enter a Full Name"
                         signUpButton.isEnabled = false
                     }
-                    text.length < 6 ->{
+                    text.length < 6 -> {
                         tiFullName.error = "Full Name Must be greater than 6 characters"
                         signUpButton.isEnabled = false
                     }
@@ -142,8 +142,8 @@ class GenericTextWatcherSignUp internal constructor(
                 }
             }
         }
-        when(currentView2?.id){
-            R.id.et_gender ->{
+        when (currentView2?.id) {
+            R.id.et_gender -> {
                 when {
                     text.isEmpty() -> {
                         signUpButton.isEnabled = false
@@ -156,5 +156,4 @@ class GenericTextWatcherSignUp internal constructor(
             }
         }
     }
-
 }
